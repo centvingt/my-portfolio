@@ -1,8 +1,10 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
+import { BsBookFill, BsPersonLinesFill, BsPencilSquare } from 'react-icons/bs'
 import FooterComponent from '../components/FooterComponent'
 import HomeSentencesComponent from '../components/HomeComponent/HomeSentencesComponent'
+import ButtonComponent from '../components/shared/ButtonComponent'
 
 import photo120 from '../public/img/photo-120-600w.jpg'
 
@@ -30,18 +32,35 @@ const sentences = [
 const Home: NextPage = () => {
     return (
         <>
-            <div className="font-thin text-lg pr-[50px]">
-                <div className="home-mask">
-                    <Image
-                        src={photo120}
-                        alt="Vincent Caronnet, développeur mobile et web"
-                        layout="responsive"
-                    />
-                </div>
-                <h1 className="pt-8">
-                    Bonjour, je suis <strong>Vincent Caronnet,</strong>
-                </h1>
-                <HomeSentencesComponent sentences={sentences} />
+            <div className="font-thin text-lg pr-[60px]">
+                <header className="mb-10">
+                    <div className="home-mask">
+                        <Image
+                            src={photo120}
+                            alt="Vincent Caronnet, développeur mobile et web"
+                            layout="responsive"
+                        />
+                    </div>
+                    <h1 className="pt-8">
+                        Bonjour, je suis <strong>Vincent Caronnet,</strong>
+                    </h1>
+                    <HomeSentencesComponent sentences={sentences} />
+                </header>
+                <ButtonComponent
+                    icon={<BsBookFill />}
+                    destination="/"
+                    label="Feuilleter mes travaux"
+                />
+                <ButtonComponent
+                    icon={<BsPersonLinesFill />}
+                    destination="/"
+                    label="Voir mon parcours"
+                />
+                <ButtonComponent
+                    icon={<BsPencilSquare />}
+                    destination="/"
+                    label="Me contacter"
+                />
             </div>
             <FooterComponent />
         </>

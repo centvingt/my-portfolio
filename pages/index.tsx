@@ -48,17 +48,17 @@ const Home: NextPage = () => {
                 </header>
                 <ButtonComponent
                     icon={<BsBookFill />}
-                    destination="/"
+                    destination="/portfolio/"
                     label="Feuilleter mes travaux"
                 />
                 <ButtonComponent
                     icon={<BsPersonLinesFill />}
-                    destination="/"
+                    destination="/resume/"
                     label="Voir mon parcours"
                 />
                 <ButtonComponent
                     icon={<BsPencilSquare />}
-                    destination="/"
+                    destination="/contact/"
                     label="Me contacter"
                 />
             </div>

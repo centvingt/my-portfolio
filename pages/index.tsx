@@ -19,7 +19,7 @@ const sentences = [
         développeur <strong>React.</strong>
     </>,
     <>
-        graphiste <strong>UX/UI.</strong>
+        graphiste <strong>UI.</strong>
     </>,
     <>
         basé <strong>à Paris.</strong>
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
                     label="Me contacter"
                 />
             </div>
-            <FooterComponent />
+            {/* <FooterComponent /> */}
         </>
     )
 }

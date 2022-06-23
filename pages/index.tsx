@@ -1,8 +1,6 @@
 import type { NextPage } from 'next'
-import Head from 'next/head'
 import Image from 'next/image'
 import { BsBookFill, BsPersonLinesFill, BsPencilSquare } from 'react-icons/bs'
-import FooterComponent from '../components/FooterComponent'
 import HomeSentencesComponent from '../components/HomeComponent/HomeSentencesComponent'
 import ButtonComponent from '../components/shared/ButtonComponent'
 

@@ -1,5 +1,6 @@
 import { FC, ReactNode } from 'react'
 import FooterComponent from '../FooterComponent'
+import NavComponent from '../NavComponent'
 
 interface Props {
     children: ReactNode
@@ -8,6 +9,7 @@ interface Props {
 const LayoutComponent: FC<Props> = ({ children }) => {
     return (
         <>
+            <NavComponent />
             {children}
             <FooterComponent />
         </>

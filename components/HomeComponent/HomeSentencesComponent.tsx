@@ -3,9 +3,10 @@ import { FC, useEffect, useRef, useState } from 'react'
 
 interface Props {
     sentences: JSX.Element[]
+    className: string
 }
 
-const HomeSentencesComponent: FC<Props> = ({ sentences }) => {
+const HomeSentencesComponent: FC<Props> = ({ sentences, className }) => {
     const [randomSentence, setRandomSentence] = useState(<></>)
 
     const lastRandomSentence = useRef<JSX.Element>(<></>)
@@ -29,7 +30,7 @@ const HomeSentencesComponent: FC<Props> = ({ sentences }) => {
         return () => clearInterval(interval)
     }, [])
 
-    return <h2>{randomSentence}</h2>
+    return <h2 className={className}>{randomSentence}</h2>
 }
 
 export default HomeSentencesComponent

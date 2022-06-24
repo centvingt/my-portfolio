@@ -14,13 +14,3 @@
         @apply text-accent font-bold;
     }
 }
-
-@layer components {
-    .home-mask {
-        clip-path: polygon(16% 0, 100% 42%, 69% 100%, 0 76%);
-
-        width: 120vw;
-
-        @apply -mt-16;
-    }
-}

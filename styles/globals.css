@@ -8,9 +8,18 @@
         @apply overflow-x-hidden;
     }
     body {
-        @apply bg-slate-900 text-slate-100 p-6;
+        @apply bg-slate-900 p-6 text-slate-100;
+    }
+    h1 {
+        @apply text-center text-lg font-bold text-accent;
     }
     strong {
-        @apply text-accent font-bold;
+        @apply font-bold text-accent;
+    }
+}
+
+@layer utilities {
+    .pr-layout {
+        padding-right: 60px;
     }
 }

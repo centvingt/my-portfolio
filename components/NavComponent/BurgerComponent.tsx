@@ -9,7 +9,7 @@ interface Props {
 const BurgerComponent: FC<Props> = ({ isClosed, setIsClosed }) => {
     return (
         <div
-            className="row-[1_/_2] col-[1_/_2] justify-self-end items-center w-6 flex flex-col gap-1.5 sm:hidden"
+            className="col-[1_/_2] row-[1_/_2] flex w-6 flex-col items-center gap-1.5 justify-self-end sm:hidden"
             onClick={() => setIsClosed(!isClosed)}
         >
             <BurgerBar isClosed={isClosed} position={0} />

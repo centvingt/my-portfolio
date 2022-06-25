@@ -7,13 +7,13 @@ const NavComponent: FC = () => {
 
     return (
         <div
-            className={`fixed top-0 right-0 left-0 px-6 py-4 bg-slate-900/60 z-10 border-b border-accent text-sm font-extralight overflow-hidden transition-all ${
+            className={`fixed top-0 right-0 left-0 z-10 overflow-hidden border-b border-accent bg-slate-900/60 px-6 py-4 text-sm font-extralight transition-all ${
                 isClosed ? 'h-[52px]' : 'h-[150px] sm:h-[52px]'
             }`}
         >
-            <nav className="grid sm:flex justify-items-center gap-3 sm:gap-4">
+            <nav className="grid justify-items-center gap-3 sm:flex sm:gap-4">
                 <Link href={'/'}>
-                    <a className="justify-self-start row-[1_/_2] col-[1_/_2]">
+                    <a className="col-[1_/_2] row-[1_/_2] justify-self-start">
                         <span className="font-extrabold">APPS.120</span>
                         <span className="font-extralight text-accent">
                             .design

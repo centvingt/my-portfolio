@@ -1,31 +1,10 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
 import { BsBookFill, BsPersonLinesFill, BsPencilSquare } from 'react-icons/bs'
-import HomeSentencesComponent from '../components/HomeComponent/HomeSentencesComponent'
-import ButtonComponent from '../components/shared/ButtonComponent'
+import HomeSentencesComponent from '../components/home-component/home-sentences-component'
+import ButtonComponent from '../components/shared/button-component'
 
 import photo120 from '../public/img/photo-120-1500w.jpg'
-
-const sentences = [
-    <>
-        développeur <strong>mobile iOS.</strong>
-    </>,
-    <>
-        <strong>développeur web</strong> fullstack.
-    </>,
-    <>
-        développeur <strong>React.</strong>
-    </>,
-    <>
-        graphiste <strong>UI.</strong>
-    </>,
-    <>
-        basé <strong>à Paris.</strong>
-    </>,
-    <>
-        jeune homme <strong>de {new Date().getFullYear() - 1975} ans.</strong>
-    </>,
-]
 
 const HomePage: NextPage = () => {
     const buttonSupplementaryClasses = 'md:w-64'
@@ -40,18 +19,18 @@ const HomePage: NextPage = () => {
                 />
             </div>
             <div className="col-span-full col-start-8 row-start-1 flex h-full max-h-screen flex-col justify-end sm:col-start-7 lg:col-start-8 2xl:col-start-7">
-                <h1 className="pt-8 text-left font-thin text-slate-100 sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
+                <h1 className="pt-8 text-left text-lg font-thin not-italic text-slate-100 sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
                     Bonjour, je suis <strong>Vincent Caronnet,</strong>
                 </h1>
                 <HomeSentencesComponent
                     sentences={sentences}
-                    className=" font-thin sm:mb-4 sm:mt-1 sm:text-xl md:mb-6 md:text-2xl lg:mb-20 lg:mt-3 lg:text-3xl xl:text-4xl 2xl:text-5xl"
+                    className="text-left text-lg font-thin not-italic text-slate-100 sm:mb-4 sm:mt-1 sm:text-xl md:mb-6 md:text-2xl lg:mb-20 lg:mt-3 lg:text-3xl xl:text-4xl 2xl:text-5xl"
                 />
             </div>
             <div className="lg: col-span-full col-start-1 row-start-2 mb-10 grid-cols-3 gap-3 self-start md:col-span-full md:row-span-full md:row-start-1 md:mt-8 md:justify-self-end lg:row-span-1 lg:row-start-2 lg:grid lg:justify-self-start">
                 <ButtonComponent
                     icon={<BsBookFill />}
-                    destination="/portfolio/"
+                    destination="/works/"
                     label="Feuilleter mes travaux"
                     supplementaryClasses={buttonSupplementaryClasses}
                 />
@@ -73,3 +52,24 @@ const HomePage: NextPage = () => {
 }
 
 export default HomePage
+
+const sentences = [
+    <>
+        développeur <strong>mobile iOS.</strong>
+    </>,
+    <>
+        <strong>développeur web</strong> fullstack.
+    </>,
+    <>
+        développeur <strong>React.</strong>
+    </>,
+    <>
+        graphiste <strong>UI.</strong>
+    </>,
+    <>
+        basé <strong>à Paris.</strong>
+    </>,
+    <>
+        jeune homme <strong>de {new Date().getFullYear() - 1975} ans.</strong>
+    </>,
+]

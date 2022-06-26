@@ -1,6 +1,6 @@
 import { FC, ReactNode } from 'react'
-import FooterComponent from '../FooterComponent'
-import NavComponent from '../NavComponent'
+import FooterComponent from '../footer-component'
+import NavComponent from '../nav-component'
 
 interface Props {
     children: ReactNode

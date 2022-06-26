@@ -10,8 +10,23 @@
     body {
         @apply bg-slate-900 p-6 text-slate-100;
     }
+    h1,
+    h2,
+    h3 {
+        @apply text-left text-accent;
+    }
+    h1,
+    h2 {
+        @apply font-bold;
+    }
     h1 {
-        @apply text-center text-lg font-bold text-accent;
+        @apply text-xl;
+    }
+    h2 {
+        @apply mt-6 text-lg italic;
+    }
+    h3 {
+        @apply mb-3 text-sm font-normal;
     }
     strong {
         @apply font-bold text-accent;

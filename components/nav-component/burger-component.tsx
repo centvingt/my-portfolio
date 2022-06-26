@@ -1,5 +1,5 @@
 import { FC, Dispatch, SetStateAction } from 'react'
-import BurgerBar from './BurgerBar'
+import BurgerBar from './burger-bar'
 
 interface Props {
     isClosed: boolean

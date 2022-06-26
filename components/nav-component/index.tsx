@@ -1,6 +1,6 @@
 import { FC, useState } from 'react'
 import Link from 'next/link'
-import BurgerComponent from './BurgerComponent'
+import BurgerComponent from './burger-component'
 
 const NavComponent: FC = () => {
     const [isClosed, setIsClosed] = useState(false)
@@ -27,7 +27,7 @@ const NavComponent: FC = () => {
                 <Link href={'/'}>
                     <a className="text-accent sm:ml-auto">Accueil</a>
                 </Link>
-                <Link href={'/portfolio/'}>
+                <Link href={'/works/'}>
                     <a className="text-accent">Mes travaux</a>
                 </Link>
                 <Link href={'/resume/'}>

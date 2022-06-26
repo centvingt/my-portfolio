@@ -1,6 +1,6 @@
 import '../styles/globals.css'
 import type { AppProps } from 'next/app'
-import LayoutComponent from '../components/LayoutComponent'
+import LayoutComponent from '../components/layout-component'
 
 import Head from 'next/head'
 

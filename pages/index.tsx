@@ -27,7 +27,7 @@ const HomePage: NextPage = () => {
                     />
                 </div>
             </header>
-            <div className="grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-5">
+            <div className="grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-5 gap-y-0">
                 <ButtonComponent
                     icon={<BsBookFill />}
                     destination="/works/"

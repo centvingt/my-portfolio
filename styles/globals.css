@@ -5,10 +5,10 @@
 @layer base {
     html,
     body {
-        @apply overflow-x-hidden;
+        @apply min-h-screen overflow-x-hidden;
     }
     body {
-        @apply bg-slate-900 p-6 text-slate-100;
+        @apply bg-slate-900 bg-[url('/img/activity-120.svg')] bg-[length:60px] p-6 text-slate-100;
     }
     h1,
     h2,

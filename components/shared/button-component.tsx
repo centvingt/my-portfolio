@@ -28,6 +28,7 @@ const ButtonComponent: FC<PropsInterface> = ({
             <a
                 className={`mt-4 grid grid-cols-[18px_max-content] items-center justify-center gap-2 bg-accent py-2 px-4 text-lg font-medium text-slate-900 ${supplementaryClasses}`}
                 target={target}
+                rel={target === '_blank' ? 'nofollow' : ''}
             >
                 <IconContext.Provider value={{ size: '18px' }}>
                     {icon}

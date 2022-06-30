@@ -4,7 +4,15 @@ import markdownToHtml from '../../utils/markdownToHtml'
 import { ParsedUrlQuery } from 'querystring'
 import Image from 'next/image'
 import Link from 'next/link'
-import { BsChevronLeft } from 'react-icons/bs'
+import {
+    BsChevronLeft,
+    BsGithub,
+    BsApple,
+    BsFillBrushFill,
+    BsLink45Deg,
+} from 'react-icons/bs'
+import ButtonComponent from '../../components/shared/button-component'
+import { Target } from '../../components/shared/button-component'
 
 interface Props {
     work: Work
@@ -23,7 +31,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
         <div className="pr-layout mt-10">
             <header>
                 <Link href="/works/">
-                    <a className="mb-5 grid grid-cols-[14px_1fr] items-center text-sm font-light text-slate-500 underline">
+                    <a className="mb-5 grid grid-cols-[12px_1fr] items-center text-xs font-light text-slate-300 underline">
                         <BsChevronLeft /> Retour aux travaux
                     </a>
                 </Link>
@@ -37,6 +45,40 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                         layout="fill"
                         objectFit={'contain'}
                     />
+                </div>
+                <div className="grid">
+                    {work.gitHubURL && (
+                        <ButtonComponent
+                            icon={<BsGithub />}
+                            label={'Voir le projet sur GitHub'}
+                            destination={work.gitHubURL}
+                            target={Target.Blank}
+                        />
+                    )}
+                    {work.appStoreURL && (
+                        <ButtonComponent
+                            icon={<BsApple />}
+                            label={'Télécharger sur l’AppStore'}
+                            destination={work.appStoreURL}
+                            target={Target.Blank}
+                        />
+                    )}
+                    {work.websiteURL && (
+                        <ButtonComponent
+                            icon={<BsLink45Deg />}
+                            label={'Voir le site web'}
+                            destination={work.websiteURL}
+                            target={Target.Blank}
+                        />
+                    )}
+                    {work.figmaURL && (
+                        <ButtonComponent
+                            icon={<BsFillBrushFill />}
+                            label={'Voir la maquette sur Figma'}
+                            destination={work.figmaURL}
+                            target={Target.Blank}
+                        />
+                    )}
                 </div>
             </header>
             <main
@@ -67,6 +109,7 @@ export const getStaticProps: GetStaticProps = async context => {
         'figmaURL',
         'appStoreURL',
         'gitHubURL',
+        'websiteURL',
         'categories',
     ])
 

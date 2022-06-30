@@ -19,6 +19,7 @@ export interface Work {
     appStoreURL?: string
     figmaURL?: string
     gitHubURL?: string
+    websiteURL?: string
 }
 
 // path to our list of available works

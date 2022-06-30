@@ -50,7 +50,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                     {work.gitHubURL && (
                         <ButtonComponent
                             icon={<BsGithub />}
-                            label={'Voir le projet sur GitHub'}
+                            label={'Voir le code sur GitHub'}
                             destination={work.gitHubURL}
                             target={Target.Blank}
                         />

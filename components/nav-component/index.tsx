@@ -7,7 +7,7 @@ const NavComponent: FC = () => {
 
     return (
         <div
-            className={`fixed top-0 right-0 left-0 z-10 overflow-hidden border-b border-accent bg-slate-900/60 px-6 py-4 text-sm font-extralight transition-all ${
+            className={`fixed top-0 right-0 left-0 z-10 overflow-hidden border-b border-accent bg-slate-900/80 px-6 py-4 text-sm font-extralight transition-all ${
                 isClosed ? 'h-[52px]' : 'h-[180px] sm:h-[52px]'
             }`}
         >

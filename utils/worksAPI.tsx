@@ -15,6 +15,7 @@ export interface Work {
     slug: string
     date: string
     categories: string[]
+    content?: string
     appStoreURL?: string
     figmaURL?: string
     gitHubURL?: string

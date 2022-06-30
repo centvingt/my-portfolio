@@ -15,7 +15,7 @@ const SnippetWorkComponent: FC<Props> = ({ work }) => {
             <a className="mb-10 block">
                 <h2>{work.title}</h2>
                 <h3>{`${work.categories.join(' – ')}`}</h3>
-                <div className="relative aspect-square w-full">
+                <div className="relative aspect-square w-full border border-accent">
                     <Image
                         src={`/img/works/${work.slug}-cover.jpg`}
                         alt={`${work.title} (${work.categories.join(', ')}).`}

@@ -13,23 +13,30 @@
     h1,
     h2,
     h3 {
-        @apply text-left text-accent;
+        @apply text-center;
     }
     h1,
     h2 {
-        @apply font-bold;
+        @apply font-bold text-accent;
     }
     h1 {
-        @apply text-xl;
+        @apply text-2xl;
     }
     h2 {
         @apply mt-6 text-lg italic;
     }
     h3 {
-        @apply mb-3 text-sm font-normal;
+        @apply mb-3 text-sm font-normal text-slate-500;
     }
     strong {
         @apply font-bold text-accent;
+    }
+
+    ul {
+        @apply ml-4 list-disc;
+    }
+    p {
+        @apply mt-2;
     }
 }
 

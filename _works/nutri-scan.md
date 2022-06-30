@@ -9,17 +9,17 @@ categories: ['Développement iOS', 'Conception UI']
 
 ## Développement
 
--   SwiftUI 3 (compatible avec les iPhones à partir de l’iOS 15) et une architecture MVVM,
+-   **SwiftUI 3** (compatible avec les iPhones à partir de l’iOS 15) et une architecture MVVM,
 
--   le SPM CarBode pour scanner le code à barres avec l’appareil photo de l’iPhone,
+-   le SPM **CarBode** pour scanner le code à barres avec l’appareil photo de l’iPhone,
 
--   le SPM Kingfisher pour afficher les images de produits à partir de leur URL,
+-   le SPM **Kingfisher** pour afficher les images de produits à partir de leur URL,
 
--   CoreData pour persister l’historique de recherche et les favoris,
+-   **CoreData** pour persister l’historique de recherche et les favoris,
 
--   StoreKit 2 (compatible avec les iPhones à partir de l’iOS 15) pour l’implémentation des achats In-App,
+-   **StoreKit 2** (compatible avec les iPhones à partir de l’iOS 15) pour l’implémentation des achats In-App,
 
--   XCTest pour tester la majorité de la logique du ViewModèle et du Modèle.
+-   **XCTest** pour tester la majorité de la logique du ViewModèle et du Modèle.
 
 ## Conception UI
 

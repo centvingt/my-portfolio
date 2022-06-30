@@ -8,15 +8,15 @@ categories: ['Développement iOS', 'Conception UI']
 
 ## Développement
 
--   UIKit avec une architecture MVC,
+-   **UIKit** avec une architecture MVC,
 
--   URLSession et le protocole Decodable pour traiter les requêtes HTTP des trois APIs,
+-   **URLSession** et le protocole **Decodable** pour traiter les requêtes HTTP des trois APIs,
 
--   CoreData et UserDefaults pour persister les données,
+-   **CoreData** et **UserDefaults** pour persister les données,
 
--   UIPasteboard pour traiter les copier/coller,
+-   **UIPasteboard** pour traiter les copier/coller,
 
--   XCTest pour tester la logique du Modèle à l’aide de _mocks._
+-   **XCTest** pour tester la logique du Modèle à l’aide de _mocks._
 
 ## Conception UI
 

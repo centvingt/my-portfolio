@@ -10,10 +10,20 @@ interface Props {
 const PortfolioPage: NextPage<Props> = ({ allWorks }) => {
     return (
         <div className="pr-layout">
-            <h1 className="mt-10">Mes travaux</h1>
-            {allWorks.map(work => (
-                <SnippetWorkComponent work={work} key={work.slug} />
-            ))}
+            <header>
+                <h1 className="mt-10">Mes travaux</h1>
+            </header>
+            {/* <main className="grid grid-cols-[repeat(auto-fill,_minmax(1fr,_450px))] gap-5"> */}
+            {/* <main className="grid grid-cols-[fit-content(450px)] gap-5"> */}
+            {/* <main className="grid grid-cols-[repeat(auto-fill,_minmax(min(100%,_450px),_1fr))] gap-5"> */}
+            {/* <main className="grid grid-cols-[repeat(auto-fill,_max(100%,_450px))] gap-5"> */}
+            {/* <main className="grid auto-cols-[fit-content(450px)] gap-5"> */}
+            {/* <main className="grid grid-cols-[repeat(auto-fit,_minmax(100px,_max-content))] gap-5"> */}
+            <main className="grid grid-cols-[repeat(auto-fit,_minmax(215px,_max-content))] items-end gap-5">
+                {allWorks.map(work => (
+                    <SnippetWorkComponent work={work} key={work.slug} />
+                ))}
+            </main>
         </div>
     )
 }

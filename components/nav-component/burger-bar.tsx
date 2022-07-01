@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 interface Props {
-    isClosed: boolean
+    navIsClosed: boolean
     position: Position
 }
 enum Position {
@@ -10,9 +10,9 @@ enum Position {
     Third,
 }
 
-const BurgerBar: FC<Props> = ({ isClosed, position }) => {
+const BurgerBar: FC<Props> = ({ navIsClosed, position }) => {
     const getCSSProperty: () => string = () => {
-        if (isClosed) return ''
+        if (navIsClosed) return ''
 
         switch (position) {
             case 0:

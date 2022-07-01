@@ -1,4 +1,4 @@
-import { FC, ReactNode, useEffect, useState } from 'react'
+import { FC, ReactNode, useState } from 'react'
 import FooterComponent from '../footer-component'
 import NavComponent from '../nav-component'
 

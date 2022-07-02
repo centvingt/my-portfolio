@@ -14,32 +14,35 @@ const NavComponent: FC<Props> = ({ navIsClosed, setNavIsClosed }) => {
                 navIsClosed ? 'h-[52px]' : 'h-[180px] sm:h-[52px]'
             }`}
         >
-            <nav className="grid justify-items-center gap-3 sm:flex sm:gap-4">
-                <Link href={'/'}>
-                    <a className="col-[1_/_2] row-[1_/_2] justify-self-start">
-                        <span className="font-extrabold">APPS.120</span>
-                        <span className="font-extralight text-accent">
-                            .design
-                        </span>
-                    </a>
-                </Link>
-                <BurgerComponent
-                    navIsClosed={navIsClosed}
-                    setNavIsClosed={setNavIsClosed}
-                />
-                <Link href={'/'}>
-                    <a className="text-accent sm:ml-auto">Accueil</a>
-                </Link>
-                <Link href={'/works/'}>
-                    <a className="text-accent">Mes travaux</a>
-                </Link>
-                <Link href={'/resume/'}>
-                    <a className="text-accent">Mon parcours</a>
-                </Link>
-                <Link href={'/contact/'}>
-                    <a className="text-accent">Me contacter</a>
-                </Link>
-            </nav>
+            {/* <nav className="grid justify-items-center gap-3 sm:container sm:mx-auto sm:flex sm:gap-4 xl:px-[calc(((100%_-_11rem)_/_12))]"> */}
+            <div className="grid sm:container sm:mx-auto xl:grid-cols-12">
+                <nav className="grid justify-items-center gap-3 sm:container sm:mx-auto sm:flex sm:gap-4 xl:col-span-full xl:col-start-2">
+                    <Link href={'/'}>
+                        <a className="col-[1_/_2] row-[1_/_2] justify-self-start">
+                            <span className="font-extrabold">APPS.120</span>
+                            <span className="font-extralight text-accent">
+                                .design
+                            </span>
+                        </a>
+                    </Link>
+                    <BurgerComponent
+                        navIsClosed={navIsClosed}
+                        setNavIsClosed={setNavIsClosed}
+                    />
+                    <Link href={'/'}>
+                        <a className="text-accent sm:ml-auto">Accueil</a>
+                    </Link>
+                    <Link href={'/works/'}>
+                        <a className="text-accent">Mes travaux</a>
+                    </Link>
+                    <Link href={'/resume/'}>
+                        <a className="text-accent">Mon parcours</a>
+                    </Link>
+                    <Link href={'/contact/'}>
+                        <a className="text-accent">Me contacter</a>
+                    </Link>
+                </nav>
+            </div>
         </div>
     )
 }

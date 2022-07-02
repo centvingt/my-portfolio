@@ -13,7 +13,7 @@
     h1,
     h2,
     h3 {
-        @apply text-center;
+        @apply text-center lg:text-left;
     }
     h1,
     h2 {
@@ -42,6 +42,9 @@
 
 @layer utilities {
     .pr-layout {
-        padding-right: 60px;
+        @apply pr-[60px];
+    }
+    .buttons-container {
+        @apply -mt-4 grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-5 gap-y-0;
     }
 }

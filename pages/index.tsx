@@ -8,7 +8,7 @@ import photo120 from '../public/img/photo-120-1500w.jpg'
 
 const HomePage: NextPage = () => {
     return (
-        <div className="pr-layout ">
+        <div className="pr-layout  sm:container sm:mx-auto">
             <header className="mb-6 grid-cols-12 text-lg sm:grid">
                 <div className="row-[1_/_2] -mt-16 w-[120vw] max-w-4xl [clip-path:polygon(16%_0,_100%_42%,_69%_100%,_0_76%)] sm:col-[1_/_8] sm:-mt-8 sm:w-full md:col-[1_/_7] lg:col-[1_/_9] xl:-mt-32">
                     <Image
@@ -27,7 +27,7 @@ const HomePage: NextPage = () => {
                     />
                 </div>
             </header>
-            <div className="grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-5 gap-y-0">
+            <div className="buttons-container">
                 <ButtonComponent
                     icon={<BsBookFill />}
                     destination="/works/"

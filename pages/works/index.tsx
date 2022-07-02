@@ -9,7 +9,7 @@ interface Props {
 
 const PortfolioPage: NextPage<Props> = ({ allWorks }) => {
     return (
-        <div className="pr-layout">
+        <div className="pr-layout sm:container sm:mx-auto">
             <header>
                 <h1 className="mt-10">Mes travaux</h1>
             </header>

@@ -43,7 +43,7 @@ const ResumePage: FC = () => {
                         </li>
                     </ul>
                 </section>
-                <div className="my-5 md:-order-1 md:mt-8">
+                <div className="mt-5 md:-order-1 md:my-5 md:mt-8">
                     <Image
                         src={vincent2019}
                         alt="Vincent Caronnet en 2019"

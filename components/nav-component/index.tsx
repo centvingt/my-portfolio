@@ -15,7 +15,7 @@ const NavComponent: FC<Props> = ({ navIsClosed, setNavIsClosed }) => {
             }`}
         >
             <div className="grid sm:container sm:mx-auto xl:grid-cols-12">
-                <nav className="pr-layout grid justify-items-center gap-3 sm:container sm:mx-auto sm:flex sm:gap-4 xl:col-span-10 xl:col-start-2">
+                <nav className="col-span-full grid justify-items-center gap-3 sm:container sm:mx-auto sm:flex sm:gap-4 xl:col-span-10 xl:col-start-2">
                     <Link href={'/'}>
                         <a className="col-[1_/_2] row-[1_/_2] justify-self-start">
                             <span className="font-extrabold">APPS.120</span>

@@ -9,4 +9,6 @@ categories: ['Développement web', 'WordPress']
 
 Portfolio de Guillaume Baily-Michels, artiste et directeur artistique parisien sorti des écoles Duperré, Olivier de Serres et Penninghen.
 
-Le site a été réalisé avec WordPress d’après les maquettes fournies par le client.
+Ce portfolio présente les séries de l’artistes composées de collages, de photographies ou de tableaux.
+
+Le site a été réalisé avec WordPress d’après les maquettes fournies par le client et le thème WordPress qu’il a choisi.

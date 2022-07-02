@@ -1,6 +1,9 @@
 import { FC } from 'react'
 import Image from 'next/image'
 
+import ButtonComponent from '../../components/shared/button-component'
+import { BsPencilSquare } from 'react-icons/bs'
+
 import vincent1998 from '../../public/img/vincent-1998.jpg'
 import vincent2019 from '../../public/img/vincent-2019.jpg'
 
@@ -61,6 +64,11 @@ const ResumePage: FC = () => {
                         Faites-moi part de votre projet, je saurai vous
                         conseiller au mieux et vous aiderai à le développer.
                     </p>
+                    <ButtonComponent
+                        icon={<BsPencilSquare />}
+                        destination="/contact/"
+                        label="Me contacter"
+                    />
                 </section>
             </main>
         </div>

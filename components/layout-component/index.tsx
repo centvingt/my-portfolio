@@ -7,7 +7,7 @@ interface Props {
 }
 
 const LayoutComponent: FC<Props> = ({ children }) => {
-    const [navIsClosed, setNavIsClosed] = useState(false)
+    const [navIsClosed, setNavIsClosed] = useState(true)
 
     useEffect(() => {
         window

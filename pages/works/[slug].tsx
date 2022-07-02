@@ -40,7 +40,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                 <h3>{`${work.categories.join(' – ')}`}</h3>
             </header>
             <div className="col-span-5 col-start-1 xl:col-span-4 xl:col-start-2">
-                <div className="relative aspect-square w-full border border-accent">
+                <div className="relative aspect-square w-full">
                     <Image
                         src={`/img/works/${work.slug}-cover.jpg`}
                         alt={`${work.title} (${work.categories.join(', ')}).`}

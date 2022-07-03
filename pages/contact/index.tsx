@@ -2,6 +2,9 @@ import { ChangeEvent, FC, useState, useRef, useEffect } from 'react'
 import { IconContext } from 'react-icons'
 import { FiSend } from 'react-icons/fi'
 
+import Image from 'next/image'
+import logoNeon from '../../public/img/logo-neon.jpg'
+
 const ContactPage: FC = () => {
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -46,7 +49,7 @@ const ContactPage: FC = () => {
 
     return (
         <div className="pr-layout mt-10 grid-cols-12 gap-5 sm:container sm:mx-auto md:grid">
-            <header>
+            <header className="col-span-5 mb-5 grid content-start xl:col-span-4 xl:col-start-2">
                 <h1>Me contacter</h1>
                 <p>
                     Écrivez-moi pour me parler de votre projet mobile
@@ -54,10 +57,17 @@ const ContactPage: FC = () => {
                     mieux pour le développer.
                 </p>
                 <p>À très bientôt&thinsp;!</p>
+                <div className="mt-3 hidden md:block">
+                    <Image
+                        src={logoNeon}
+                        alt="Confiez le développement de vos applications et de vos site internet à 120.design."
+                        layout="responsive"
+                    />
+                </div>
             </header>
-            <main>
+            <main className="col-span-7 grid text-slate-300 lg:col-start-7 xl:col-span-5 xl:col-start-7">
                 <form
-                    className="0 my-5 bg-accent/20 p-4 text-accent"
+                    className="0 mb-5 bg-accent/20 p-4 text-accent"
                     ref={formContactRef}
                 >
                     <fieldset className="invalid:text-tonic">

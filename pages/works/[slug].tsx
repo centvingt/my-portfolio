@@ -37,7 +37,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                 } (${work.categories.join(', ')}).`}</title>
                 <meta name="description" content={work.description} />
             </Head>
-            <div className="pr-layout mt-10 grid-cols-12 gap-5 sm:container sm:mx-auto md:grid">
+            <div className="pr-layout mt-10 grid-cols-12 gap-x-5 gap-y-1 sm:container sm:mx-auto md:grid">
                 <header className="col-span-5 xl:col-span-4 xl:col-start-2">
                     <Link href="/works/">
                         <a className="mb-5 grid grid-cols-[12px_1fr] items-center text-xs font-light text-slate-300 underline">

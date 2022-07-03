@@ -10,9 +10,15 @@ const LayoutComponent: FC<Props> = ({ children }) => {
     const [navIsClosed, setNavIsClosed] = useState(true)
 
     useEffect(() => {
-        window
-            .matchMedia('(min-width: 640px)')
-            .addEventListener('change', () => setNavIsClosed(true))
+        try {
+            window
+                .matchMedia('screen and (min-width: 640px)')
+                .addEventListener('change', () => setNavIsClosed(true))
+        } catch (error) {
+            window
+                .matchMedia('screen and (min-width: 640px)')
+                .addListener(() => setNavIsClosed(true))
+        }
     }, [])
 
     return (

@@ -72,6 +72,7 @@ const ContactPage: FC = () => {
                     data-netlify="true"
                     name="contact"
                 >
+                    <input type="hidden" name="form-name" value="contact" />
                     <fieldset className="invalid:text-tonic">
                         <label
                             className="block font-semibold italic"

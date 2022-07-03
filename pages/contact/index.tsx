@@ -69,6 +69,8 @@ const ContactPage: FC = () => {
                 <form
                     className="0 mb-5 bg-accent/20 p-4 text-accent"
                     ref={formContactRef}
+                    data-netlify="true"
+                    name="contact"
                 >
                     <fieldset className="invalid:text-tonic">
                         <label

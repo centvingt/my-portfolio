@@ -4,6 +4,7 @@ date: '2021-07-10'
 appStoreURL: 'https://apps.apple.com/fr/app/monbaluchonparisnyc/id1576078398'
 gitHubURL: 'https://github.com/centvingt/MonBaluchonParisNYC'
 categories: ['Développement iOS', 'Conception UI']
+description: 'Application iOS destinée aux parisiens qui voyagent à New-York'
 ---
 
 ## Développement

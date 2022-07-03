@@ -1,4 +1,6 @@
 import type { NextPage, GetStaticProps } from 'next'
+import Head from 'next/head'
+
 import SnippetWorkComponent from '../../components/works-components/snippet-work-component'
 
 import { Work, getAllWorks } from '../../utils/worksAPI'
@@ -9,18 +11,29 @@ interface Props {
 
 const PortfolioPage: NextPage<Props> = ({ allWorks }) => {
     return (
-        <div className="pr-layout grid gap-5 sm:container sm:mx-auto xl:grid-cols-12">
-            <div className="xl:col-span-10 xl:col-start-2">
-                <header>
-                    <h1 className="mt-10">Mes travaux</h1>
-                </header>
-                <main className="mt-4 grid grid-cols-[repeat(auto-fit,_minmax(220px,_max-content))] items-end gap-5">
-                    {allWorks.map(work => (
-                        <SnippetWorkComponent work={work} key={work.slug} />
-                    ))}
-                </main>
+        <>
+            <Head>
+                <title>
+                    Travaux de développement web et mobile de Vincent Caronnet
+                </title>
+                <meta
+                    name="description"
+                    content="Parcourez les derniers travaux de Vincent Caronnet, développeur web et mobile à Paris : des applications pour iOS, des sites internet réalisés avec React ou WordPress."
+                />
+            </Head>
+            <div className="pr-layout grid gap-5 sm:container sm:mx-auto xl:grid-cols-12">
+                <div className="xl:col-span-10 xl:col-start-2">
+                    <header>
+                        <h1 className="mt-10">Mes travaux</h1>
+                    </header>
+                    <main className="mt-4 grid grid-cols-[repeat(auto-fit,_minmax(220px,_max-content))] items-end gap-5">
+                        {allWorks.map(work => (
+                            <SnippetWorkComponent work={work} key={work.slug} />
+                        ))}
+                    </main>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 

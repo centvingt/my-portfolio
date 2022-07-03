@@ -1,9 +1,11 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next'
+import { ParsedUrlQuery } from 'querystring'
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+
 import { Work, getAllWorks, getWorkItemsBySlug } from '../../utils/worksAPI'
 import markdownToHtml from '../../utils/markdownToHtml'
-import { ParsedUrlQuery } from 'querystring'
-import Image from 'next/image'
-import Link from 'next/link'
 import {
     BsChevronLeft,
     BsGithub,
@@ -28,66 +30,77 @@ const WorkPage: NextPage<Props> = ({ work }) => {
     }
 
     return (
-        <div className="pr-layout mt-10 grid-cols-12 gap-5 sm:container sm:mx-auto md:grid">
-            <header className="col-span-5 xl:col-span-4 xl:col-start-2">
-                <Link href="/works/">
-                    <a className="mb-5 grid grid-cols-[12px_1fr] items-center text-xs font-light text-slate-300 underline">
-                        <BsChevronLeft /> Retour aux travaux
-                    </a>
-                </Link>
-                <h1>{work.title}</h1>
-                <h2 className="mt-2">{getDate()}</h2>
-                <h3>{`${work.categories.join(' – ')}`}</h3>
-            </header>
-            <div className="col-span-5 col-start-1 xl:col-span-4 xl:col-start-2">
-                <div className="relative aspect-square w-full">
-                    <Image
-                        src={`/img/works/${work.slug}-cover.jpg`}
-                        alt={`${work.title} (${work.categories.join(', ')}).`}
-                        layout="fill"
-                        objectFit={'contain'}
-                    />
+        <>
+            <Head>
+                <title>{`Projet réalisé par Vincent Caronnet, développeur web et mobile à Paris : ${
+                    work.title
+                } (${work.categories.join(', ')}).`}</title>
+                <meta name="description" content={work.description} />
+            </Head>
+            <div className="pr-layout mt-10 grid-cols-12 gap-5 sm:container sm:mx-auto md:grid">
+                <header className="col-span-5 xl:col-span-4 xl:col-start-2">
+                    <Link href="/works/">
+                        <a className="mb-5 grid grid-cols-[12px_1fr] items-center text-xs font-light text-slate-300 underline">
+                            <BsChevronLeft /> Retour aux travaux
+                        </a>
+                    </Link>
+                    <h1>{work.title}</h1>
+                    <h2 className="mt-2">{getDate()}</h2>
+                    <h3>{`${work.categories.join(' – ')}`}</h3>
+                </header>
+                <div className="col-span-5 col-start-1 xl:col-span-4 xl:col-start-2">
+                    <div className="relative aspect-square w-full">
+                        <Image
+                            src={`/img/works/${work.slug}-cover.jpg`}
+                            alt={`${work.title} (${work.categories.join(
+                                ', '
+                            )}).`}
+                            layout="fill"
+                            objectFit={'contain'}
+                        />
+                    </div>
+                    {work.gitHubURL && (
+                        <ButtonComponent
+                            icon={<BsGithub />}
+                            label={'Voir le code sur GitHub'}
+                            destination={work.gitHubURL}
+                            target={Target.Blank}
+                        />
+                    )}
+                    {work.appStoreURL && (
+                        <ButtonComponent
+                            icon={<BsApple />}
+                            label={'Télécharger sur l’AppStore'}
+                            destination={work.appStoreURL}
+                            target={Target.Blank}
+                        />
+                    )}
+                    {work.websiteURL && (
+                        <ButtonComponent
+                            icon={<BsLink45Deg />}
+                            label={'Voir le site web'}
+                            destination={work.websiteURL}
+                            target={Target.Blank}
+                        />
+                    )}
+                    {work.figmaURL && (
+                        <ButtonComponent
+                            icon={<BsFillBrushFill />}
+                            label={'Voir la maquette sur Figma'}
+                            destination={work.figmaURL}
+                            target={Target.Blank}
+                        />
+                    )}
                 </div>
-                {work.gitHubURL && (
-                    <ButtonComponent
-                        icon={<BsGithub />}
-                        label={'Voir le code sur GitHub'}
-                        destination={work.gitHubURL}
-                        target={Target.Blank}
-                    />
-                )}
-                {work.appStoreURL && (
-                    <ButtonComponent
-                        icon={<BsApple />}
-                        label={'Télécharger sur l’AppStore'}
-                        destination={work.appStoreURL}
-                        target={Target.Blank}
-                    />
-                )}
-                {work.websiteURL && (
-                    <ButtonComponent
-                        icon={<BsLink45Deg />}
-                        label={'Voir le site web'}
-                        destination={work.websiteURL}
-                        target={Target.Blank}
-                    />
-                )}
-                {work.figmaURL && (
-                    <ButtonComponent
-                        icon={<BsFillBrushFill />}
-                        label={'Voir la maquette sur Figma'}
-                        destination={work.figmaURL}
-                        target={Target.Blank}
-                    />
-                )}
+                <main
+                    className="col-span-7 text-slate-300 sm:-mt-6 lg:col-start-7 xl:col-span-5 xl:col-start-7"
+                    dangerouslySetInnerHTML={{
+                        __html:
+                            work.content ?? '<p>Il n’y a pas de contenu !</p>',
+                    }}
+                />
             </div>
-            <main
-                className="col-span-7 text-slate-300 sm:-mt-6 lg:col-start-7 xl:col-span-5 xl:col-start-7"
-                dangerouslySetInnerHTML={{
-                    __html: work.content ?? '<p>Il n’y a pas de contenu !</p>',
-                }}
-            />
-        </div>
+        </>
     )
 }
 
@@ -105,6 +118,7 @@ export const getStaticProps: GetStaticProps = async context => {
         'title',
         'date',
         'categories',
+        'description',
         'content',
         'figmaURL',
         'appStoreURL',

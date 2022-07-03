@@ -5,6 +5,7 @@ figmaURL: 'https://www.figma.com/file/VZffastNGXQ8Z9WpPgIzNV/NutriScan?node-id=1
 appStoreURL: 'https://apple.co/3ci31r5'
 gitHubURL: 'https://github.com/centvingt/nutriscan'
 categories: ['Développement iOS', 'Conception UI']
+description: 'Application iOS pour savoir ce que contient produit alimentaire'
 ---
 
 ## Développement

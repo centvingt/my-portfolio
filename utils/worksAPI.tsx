@@ -14,6 +14,7 @@ export interface Work {
     title: string
     slug: string
     date: string
+    description: string
     categories: string[]
     content?: string
     appStoreURL?: string

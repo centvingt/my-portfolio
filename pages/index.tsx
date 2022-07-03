@@ -8,8 +8,8 @@ import photo120 from '../public/img/photo-120-1500w.jpg'
 
 const HomePage: NextPage = () => {
     return (
-        <div className="pr-layout  sm:container sm:mx-auto">
-            <header className="mb-6 grid-cols-12 text-lg sm:grid">
+        <div className="pr-layout sm:container sm:mx-auto xl:grid xl:grid-cols-12">
+            <header className="mb-6 grid-cols-12 text-lg sm:grid xl:col-span-full xl:col-start-2">
                 <div className="row-[1_/_2] -mt-16 w-[120vw] max-w-4xl [clip-path:polygon(16%_0,_100%_42%,_69%_100%,_0_76%)] sm:col-[1_/_8] sm:-mt-8 sm:w-full md:col-[1_/_7] lg:col-[1_/_9] xl:-mt-32">
                     <Image
                         src={photo120}
@@ -17,7 +17,7 @@ const HomePage: NextPage = () => {
                         layout="responsive"
                     />
                 </div>
-                <div className="col-span-full col-start-8 row-start-1 flex h-full max-h-screen flex-col justify-end sm:col-start-7 lg:col-start-8 2xl:col-start-7">
+                <div className="col-span-full col-start-8 row-start-1 flex h-full max-h-screen flex-col justify-end sm:col-start-7 lg:col-start-8 2xl:col-start-8">
                     <h1 className="pt-4 text-left text-lg font-thin not-italic text-slate-100 sm:text-base md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl">
                         Bonjour, je suis <strong>Vincent Caronnet,</strong>
                     </h1>
@@ -27,7 +27,7 @@ const HomePage: NextPage = () => {
                     />
                 </div>
             </header>
-            <div className="buttons-container">
+            <div className="buttons-container xl:col-span-full xl:col-start-2">
                 <ButtonComponent
                     icon={<BsBookFill />}
                     destination="/works/"

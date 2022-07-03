@@ -73,6 +73,7 @@ const ContactPage: FC = () => {
                     name="contact"
                 >
                     <input type="hidden" name="form-name" value="contact" />
+
                     <fieldset className="invalid:text-tonic">
                         <label
                             className="block font-semibold italic"

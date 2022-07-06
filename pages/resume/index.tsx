@@ -5,7 +5,6 @@ import Head from 'next/head'
 import ButtonComponent from '../../components/shared/button-component'
 import { BsPencilSquare } from 'react-icons/bs'
 
-import vincent1998 from '../../public/img/vincent-1998.jpg'
 import vincent2019 from '../../public/img/vincent-2019.jpg'
 
 const ResumePage: FC = () => {
@@ -28,13 +27,6 @@ const ResumePage: FC = () => {
                         pour iOS depuis une dizaine d’années après une longue
                         carrière de graphiste print.
                     </p>
-                    <div className="my-5">
-                        <Image
-                            src={vincent1998}
-                            alt="Vincent Caronnet en 1998"
-                            layout="responsive"
-                        />
-                    </div>
                 </header>
                 <main className="col-span-7 grid text-slate-300 sm:-mt-6 lg:col-start-7 xl:col-span-5 xl:col-start-7">
                     <section className="-mt-6">

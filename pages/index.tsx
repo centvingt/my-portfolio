@@ -1,11 +1,23 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import { BsBookFill, BsPersonLinesFill, BsPencilSquare } from 'react-icons/bs'
+import {
+    BsBookFill,
+    BsPersonLinesFill,
+    BsPencilSquare,
+    BsPeopleFill,
+    BsLink45Deg,
+    BsLinkedin,
+} from 'react-icons/bs'
 import HomeSentencesComponent from '../components/home-component/home-sentences-component'
 import ButtonComponent from '../components/shared/button-component'
 
+import { Target } from '../components/shared/button-component'
+
 import photo120 from '../public/img/photo-120-1500w.jpg'
+import photoOlivier from '../public/img/photo-olivier-1080w.jpg'
+import photoCasian from '../public/img/photo-casian-1080w.jpg'
+import photoDantin from '../public/img/photo-dantin-1080w.jpg'
 
 const HomePage: NextPage = () => {
     return (
@@ -45,6 +57,11 @@ const HomePage: NextPage = () => {
                         label="Feuilleter mes travaux"
                     />
                     <ButtonComponent
+                        icon={<BsPeopleFill />}
+                        destination="/#team"
+                        label="Voir mon équipe"
+                    />
+                    <ButtonComponent
                         icon={<BsPersonLinesFill />}
                         destination="/resume/"
                         label="Voir mon parcours"
@@ -54,6 +71,117 @@ const HomePage: NextPage = () => {
                         destination="/contact/"
                         label="Me contacter"
                     />
+                </div>
+            </div>
+            <div className="pr-layout mt-10 grid-cols-12 gap-5 sm:container sm:mx-auto md:grid">
+                <div className="col-span-3 grid content-start sm:mb-5 xl:col-span-3 xl:col-start-2">
+                    <h1 id="team">Le studio</h1>
+                    <p>
+                        Parce que les projets digitaux gagnent de l’ampleur
+                        rapidement et prennent vite du temps, j’ai su m’entourer
+                        d’entrepreuneurs et de professionnels compétents pour
+                        m’aider à mener à bien les travaux qu’on me confie.
+                    </p>
+                </div>
+                <div className="col-span-9 grid text-slate-300 sm:-mt-6 lg:col-start-5 xl:col-span-6 xl:col-start-6">
+                    <section className="mt-6 grid gap-x-5 md:grid-cols-2">
+                        <div>
+                            <h2>
+                                Olivier Vom Dorp, chef de projet&nbsp;digital
+                            </h2>
+                            <p>
+                                Directeur de création passé par plusieurs
+                                agences renommées, Olivier donnera la direction
+                                artistique dont a besoin votre projet.
+                            </p>
+                            <ButtonComponent
+                                icon={<BsLinkedin />}
+                                destination="https://www.linkedin.com/in/olivier-vom-dorp-expert-powerpoint/"
+                                label="Olivier sur Linkedin"
+                                target={Target.Blank}
+                            />
+                        </div>
+                        <div className="-order-1 -mb-6 [clip-path:polygon(16%_0,_100%_42%,_69%_100%,_0_76%)] md:order-none">
+                            <Image
+                                src={photoOlivier}
+                                alt="Olivier Vom Dorp, chef de projet digital"
+                                layout="responsive"
+                            />
+                        </div>
+                    </section>
+                    <section className="mt-6 grid gap-x-5 md:grid-cols-2">
+                        <div>
+                            <h2>Dantin Durand, développeur sénior</h2>
+                            <p>
+                                Aprés avoir poursuivi des études de
+                                Communication visuelle, de Webdesign puis de
+                                Développeur <em>fullstack</em> web et mobile,
+                                Dantin travaille depuis plusieurs années dans le
+                                développement Node.js et PHP en <em>back</em> et
+                                Vue.js et React en <em>front.</em>
+                            </p>
+                            <p>
+                                Son expertise dans ces domaines permettra à
+                                votre projet de gagner en qualité et en
+                                efficacité.
+                            </p>
+                            <ButtonComponent
+                                icon={<BsLinkedin />}
+                                destination="https://www.linkedin.com/in/dantindurand/"
+                                label="Dantin sur Linkedin"
+                                target={Target.Blank}
+                            />
+                        </div>
+                        <div className="-order-1 -mb-6  md:order-none">
+                            <div className="-order-1 -mb-6 [clip-path:polygon(16%_0,_100%_42%,_69%_100%,_0_76%)] md:order-none">
+                                <Image
+                                    src={photoDantin}
+                                    alt="Dantin Durand, développeur sénior"
+                                    layout="responsive"
+                                />
+                            </div>
+                        </div>
+                    </section>
+                    <section className="mt-6 grid gap-x-5 md:grid-cols-2">
+                        <div>
+                            <h2>Casian Ciorba, développeur junior</h2>
+                            <p>
+                                Après une formation d’Infographie et de
+                                Webdesign, Casian a brillament obtenu un diplôme
+                                d’UX Designer.
+                            </p>
+                            <p>
+                                Il poursuit maintenant des études de Développeur{' '}
+                                <em>fullstack</em> web et mobile où il apprend
+                                le développement <em>back</em> et{' '}
+                                <em>front.</em> Il a le souci du détail et vous
+                                pouvez être certain qu’avec lui dans mon équipe
+                                rien ne sera laissé au hasard dans votre
+                                projet&thinsp;!
+                            </p>
+                            <ButtonComponent
+                                icon={<BsLink45Deg />}
+                                destination="https://casian.fr/"
+                                label="Le site de Casian"
+                                target={Target.Blank}
+                            />
+                            <ButtonComponent
+                                icon={<BsLinkedin />}
+                                destination="https://www.linkedin.com/in/casianc/"
+                                label="Casian sur Linkedin"
+                                target={Target.Blank}
+                            />
+                        </div>
+                        <div className="-order-1 -mb-6  md:order-none">
+                            <div className="[clip-path:polygon(16%_0,_100%_42%,_69%_100%,_0_76%)]">
+                                <Image
+                                    src={photoCasian}
+                                    alt="Casian Ciorba, développeur junior"
+                                    layout="responsive"
+                                />
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
         </>
@@ -77,6 +205,9 @@ const sentences = [
     </>,
     <>
         basé <strong>à Paris.</strong>
+    </>,
+    <>
+        artisan du <strong>web.</strong>
     </>,
     <>
         jeune homme <strong>de {new Date().getFullYear() - 1975} ans.</strong>

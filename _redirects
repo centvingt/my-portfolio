@@ -1,0 +1,4 @@
+# redirect netlify sitename to your sitename for SEO purposes,
+# to avoid duplicate content. Do this for http and https
+https://dynamic-sawine-171e05.netlify.app/* https://apps.120.design/:splat 301!
+http://apps.120.design/* https://apps.120.design/:splat 301!

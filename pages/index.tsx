@@ -86,31 +86,6 @@ const HomePage: NextPage = () => {
                 <div className="col-span-9 grid text-slate-300 sm:-mt-6 lg:col-start-5 xl:col-span-6 xl:col-start-6">
                     <section className="mt-6 grid gap-x-5 md:grid-cols-2">
                         <div>
-                            <h2>
-                                Olivier Vom Dorp, chef de projet&nbsp;digital
-                            </h2>
-                            <p>
-                                Directeur de création passé par plusieurs
-                                agences renommées, Olivier donnera la direction
-                                artistique dont a besoin votre projet.
-                            </p>
-                            <ButtonComponent
-                                icon={<BsLinkedin />}
-                                destination="https://www.linkedin.com/in/olivier-vom-dorp-expert-powerpoint/"
-                                label="Olivier sur Linkedin"
-                                target={Target.Blank}
-                            />
-                        </div>
-                        <div className="-order-1 -mb-6 [clip-path:polygon(16%_0,_100%_42%,_69%_100%,_0_76%)] md:order-none">
-                            <Image
-                                src={photoOlivier}
-                                alt="Olivier Vom Dorp, chef de projet digital"
-                                layout="responsive"
-                            />
-                        </div>
-                    </section>
-                    <section className="mt-6 grid gap-x-5 md:grid-cols-2">
-                        <div>
                             <h2>Dantin Durand, développeur sénior</h2>
                             <p>
                                 Aprés avoir poursuivi des études de
@@ -133,7 +108,7 @@ const HomePage: NextPage = () => {
                             />
                         </div>
                         <div className="-order-1 -mb-6  md:order-none">
-                            <div className="-order-1 -mb-6 [clip-path:polygon(16%_0,_100%_42%,_69%_100%,_0_76%)] md:order-none">
+                            <div className="[clip-path:polygon(16%_0,_100%_42%,_69%_100%,_0_76%)] md:order-none">
                                 <Image
                                     src={photoDantin}
                                     alt="Dantin Durand, développeur sénior"
@@ -180,6 +155,31 @@ const HomePage: NextPage = () => {
                                     layout="responsive"
                                 />
                             </div>
+                        </div>
+                    </section>
+                    <section className="mt-6 grid gap-x-5 md:grid-cols-2">
+                        <div>
+                            <h2>
+                                Olivier Vom Dorp, chef de projet&nbsp;digital
+                            </h2>
+                            <p>
+                                Directeur de création passé par plusieurs
+                                agences renommées, Olivier donnera la direction
+                                artistique dont a besoin votre projet.
+                            </p>
+                            <ButtonComponent
+                                icon={<BsLinkedin />}
+                                destination="https://www.linkedin.com/in/olivier-vom-dorp-expert-powerpoint/"
+                                label="Olivier sur Linkedin"
+                                target={Target.Blank}
+                            />
+                        </div>
+                        <div className="-order-1 -mb-6 [clip-path:polygon(16%_0,_100%_42%,_69%_100%,_0_76%)] md:order-none">
+                            <Image
+                                src={photoOlivier}
+                                alt="Olivier Vom Dorp, chef de projet digital"
+                                layout="responsive"
+                            />
                         </div>
                     </section>
                 </div>

@@ -29,8 +29,6 @@ const ContactPage: FC = () => {
 
             const formIsValid = formContactRef.current?.checkValidity()
 
-            console.log('formIsValid', formIsValid)
-
             if (formIsValid) submitButton?.removeAttribute('disabled')
             else submitButton?.setAttribute('disabled', 'true')
         })

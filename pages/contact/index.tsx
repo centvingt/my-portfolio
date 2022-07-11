@@ -151,7 +151,7 @@ const ContactPage: FC = () => {
                                 checked={consent}
                                 onChange={handleConsentCheckbox}
                             />
-                            <label htmlFor="consent" className="text-xs">
+                            <label htmlFor="consent" className="text-sm">
                                 En soumettant ce formulaire, j’accepte que mes
                                 informations soient utilisées uniquement dans le
                                 cadre de ma demande et de la relation

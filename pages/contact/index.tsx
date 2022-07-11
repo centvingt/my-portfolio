@@ -17,7 +17,7 @@ const ContactPage: FC = () => {
     const submitButtonRef = useRef<HTMLButtonElement>(null)
 
     useEffect(() => {
-        formContactRef.current?.addEventListener('change', e => {
+        formContactRef.current?.addEventListener('change', () => {
             const consentInput = formContactRef.current?.consent
             const submitButton = submitButtonRef.current
 

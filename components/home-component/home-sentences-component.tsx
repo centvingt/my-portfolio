@@ -9,7 +9,7 @@ interface Props {
 const HomeSentencesComponent: FC<Props> = ({ sentences, className }) => {
     const [randomSentence, setRandomSentence] = useState(<></>)
 
-    const lastRandomSentence = useRef<JSX.Element>(<></>)
+    const lastRandomSentence = useRef<JSX.Element>(sentences[0])
 
     useEffect(() => {
         const interval = setInterval(() => {

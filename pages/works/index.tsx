@@ -1,9 +1,9 @@
 import type { NextPage, GetStaticProps } from 'next'
 import Head from 'next/head'
 
-import SnippetWorkComponent from '../../components/works-components/snippet-work-component'
+import SnippetWorkComponent from '@/components/works-components/snippet-work-component'
 
-import { Work, getAllWorks } from '../../utils/worksAPI'
+import { Work, getAllWorks } from '@/utils/worksAPI'
 
 interface Props {
     allWorks: Work[]

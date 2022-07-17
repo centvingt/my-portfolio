@@ -2,10 +2,12 @@ import { FC } from 'react'
 import Image from 'next/image'
 import Head from 'next/head'
 
-import ButtonComponent from '../../components/shared/button-component'
-import { BsPencilSquare, BsFillPersonLinesFill } from 'react-icons/bs'
+import {
+    ButtonContactComponent,
+    ButtonServicesComponent,
+} from '@/components/shared'
 
-import vincent2019 from '../../public/img/vincent-2019.jpg'
+import vincent2019 from '@/public/img/vincent-2019.jpg'
 
 const ResumePage: FC = () => {
     return (
@@ -79,16 +81,8 @@ const ResumePage: FC = () => {
                             de collaborer.
                         </p>
                         <div className="buttons-container">
-                            <ButtonComponent
-                                icon={<BsFillPersonLinesFill />}
-                                destination="/#services"
-                                label="Voir mes services"
-                            />
-                            <ButtonComponent
-                                icon={<BsPencilSquare />}
-                                destination="/contact/"
-                                label="Me contacter"
-                            />
+                            <ButtonServicesComponent />
+                            <ButtonContactComponent />
                         </div>
                     </section>
                 </main>

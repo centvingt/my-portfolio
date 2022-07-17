@@ -1,15 +1,15 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
-import {
-    BsBookFill,
-    BsFillSignpostSplitFill,
-    BsPencilSquare,
-} from 'react-icons/bs'
-import HomeSentencesComponent from '../components/home-component/home-sentences-component'
-import ButtonComponent from '../components/shared/button-component'
 
-import photo120 from '../public/img/photo-120-1500w.jpg'
+import HomeSentencesComponent from '@/components/home-component/home-sentences-component'
+import {
+    ButtonContactComponent,
+    ButtonResumeComponent,
+    ButtonWorksComponent,
+} from '@/components/shared'
+
+import photo120 from '@/public/img/photo-120-1500w.jpg'
 
 const sentences = [
     <>
@@ -67,21 +67,9 @@ const HomePage: NextPage = () => {
                     </div>
                 </header>
                 <div className="buttons-container -mt-4 xl:col-span-full xl:col-start-2">
-                    <ButtonComponent
-                        icon={<BsBookFill />}
-                        destination="/works/"
-                        label="Feuilleter mes travaux"
-                    />
-                    <ButtonComponent
-                        icon={<BsFillSignpostSplitFill />}
-                        destination="/resume/"
-                        label="Voir mon parcours"
-                    />
-                    <ButtonComponent
-                        icon={<BsPencilSquare />}
-                        destination="/contact/"
-                        label="Me contacter"
-                    />
+                    <ButtonWorksComponent />
+                    <ButtonResumeComponent />
+                    <ButtonContactComponent />
                 </div>
             </div>
             <main className="pr-layout mt-6 grid-cols-12 gap-5 sm:container sm:mx-auto md:mt-10 md:grid">
@@ -130,16 +118,8 @@ const HomePage: NextPage = () => {
                             d’administrer votre site sans l’aide de personne.
                         </p>
                         <div className="buttons-container mt-2">
-                            <ButtonComponent
-                                icon={<BsFillSignpostSplitFill />}
-                                destination="/resume/"
-                                label="Voir mon parcours"
-                            />
-                            <ButtonComponent
-                                icon={<BsPencilSquare />}
-                                destination="/contact/"
-                                label="Me contacter"
-                            />
+                            <ButtonResumeComponent />
+                            <ButtonContactComponent />
                         </div>
                     </div>
                     {/* </section> */}

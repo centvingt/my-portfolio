@@ -4,17 +4,16 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { Work, getAllWorks, getWorkItemsBySlug } from '../../utils/worksAPI'
-import markdownToHtml from '../../utils/markdownToHtml'
+import { Work, getAllWorks, getWorkItemsBySlug } from '@/utils/worksAPI'
+import markdownToHtml from '@/utils/markdownToHtml'
+import { BsChevronLeft } from 'react-icons/bs'
+
 import {
-    BsChevronLeft,
-    BsGithub,
-    BsApple,
-    BsFillBrushFill,
-    BsLink45Deg,
-} from 'react-icons/bs'
-import ButtonComponent from '../../components/shared/button-component'
-import { Target } from '../../components/shared/button-component'
+    ButtonAppStoreComponent,
+    ButtonGithubComponent,
+    ButtonWebsiteComponent,
+    ButtonFigmaComponent,
+} from '@/components/shared'
 
 interface Props {
     work: Work
@@ -60,36 +59,18 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                         />
                     </div>
                     {work.gitHubURL && (
-                        <ButtonComponent
-                            icon={<BsGithub />}
-                            label={'Voir le code sur GitHub'}
-                            destination={work.gitHubURL}
-                            target={Target.Blank}
-                        />
+                        <ButtonGithubComponent destination={work.gitHubURL} />
                     )}
                     {work.appStoreURL && (
-                        <ButtonComponent
-                            icon={<BsApple />}
-                            label={'Télécharger sur l’AppStore'}
+                        <ButtonAppStoreComponent
                             destination={work.appStoreURL}
-                            target={Target.Blank}
                         />
                     )}
                     {work.websiteURL && (
-                        <ButtonComponent
-                            icon={<BsLink45Deg />}
-                            label={'Voir le site web'}
-                            destination={work.websiteURL}
-                            target={Target.Blank}
-                        />
+                        <ButtonWebsiteComponent destination={work.websiteURL} />
                     )}
                     {work.figmaURL && (
-                        <ButtonComponent
-                            icon={<BsFillBrushFill />}
-                            label={'Voir la maquette sur Figma'}
-                            destination={work.figmaURL}
-                            target={Target.Blank}
-                        />
+                        <ButtonFigmaComponent destination={work.figmaURL} />
                     )}
                 </div>
                 <main

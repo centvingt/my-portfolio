@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { IconContext } from 'react-icons'
 import { FiSend } from 'react-icons/fi'
 
-import logoNeon from '../../public/img/logo-neon.jpg'
+import logoNeon from '@/public/img/logo-neon.jpg'
 
 const ContactPage: FC = () => {
     const [name, setName] = useState('')

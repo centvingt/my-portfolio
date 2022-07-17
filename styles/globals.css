@@ -45,7 +45,7 @@
         @apply pr-[60px];
     }
     .buttons-container {
-        @apply -mt-4 grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-5 gap-y-0;
+        @apply grid grid-cols-[repeat(auto-fill,_minmax(256px,_1fr))] gap-5 gap-y-0;
     }
     .input {
         @apply mb-3 block w-full border border-accent/20 bg-slate-900 p-3 text-accent focus:border-accent focus:outline-none focus:invalid:border-tonic;

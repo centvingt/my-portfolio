@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Head from 'next/head'
 
 import ButtonComponent from '../../components/shared/button-component'
-import { BsPencilSquare } from 'react-icons/bs'
+import { BsPencilSquare, BsFillPersonLinesFill } from 'react-icons/bs'
 
 import vincent2019 from '../../public/img/vincent-2019.jpg'
 
@@ -25,7 +25,11 @@ const ResumePage: FC = () => {
                     <p>
                         Je développe des application mobiles et des sites web
                         pour iOS depuis une dizaine d’années après une longue
-                        carrière de graphiste print.
+                        carrière de graphiste.
+                    </p>
+                    <p>
+                        J’ai commencé à enseigner ces domaines au milieu des
+                        années 2010 dans des écoles parisiennes.
                     </p>
                 </header>
                 <main className="col-span-7 grid text-slate-300 sm:-mt-6 lg:col-start-7 xl:col-span-5 xl:col-start-7">
@@ -57,7 +61,7 @@ const ResumePage: FC = () => {
                         />
                     </div>
                     <section className="-mt-2">
-                        <h2>Mes services</h2>
+                        <h2>Vous accompagner dans votre projet</h2>
                         <p>
                             Mon activité principale est d’enseigner ces langages
                             de programmation à des étudiants après le bac et je
@@ -67,11 +71,25 @@ const ResumePage: FC = () => {
                             Faites-moi part de votre projet, je saurai vous
                             conseiller au mieux et vous aiderai à le développer.
                         </p>
-                        <ButtonComponent
-                            icon={<BsPencilSquare />}
-                            destination="/contact/"
-                            label="Me contacter"
-                        />
+                        <p>
+                            Et si l’envergure de votre projet nécessite de
+                            monter une équipe, vous pouvez être rassuré&thinsp;:
+                            je suis en capacité de la monter rapidement avec des
+                            confrères compétents avec lesquels j’ai l’habitude
+                            de collaborer.
+                        </p>
+                        <div className="buttons-container">
+                            <ButtonComponent
+                                icon={<BsFillPersonLinesFill />}
+                                destination="/#services"
+                                label="Voir mes services"
+                            />
+                            <ButtonComponent
+                                icon={<BsPencilSquare />}
+                                destination="/contact/"
+                                label="Me contacter"
+                            />
+                        </div>
                     </section>
                 </main>
             </div>

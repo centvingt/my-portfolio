@@ -72,6 +72,7 @@ const ContactPage: FC = () => {
                             src={logoNeon}
                             alt="Confiez le développement de vos applications et de vos site internet à 120.design."
                             layout="responsive"
+                            placeholder="blur"
                         />
                     </div>
                 </header>

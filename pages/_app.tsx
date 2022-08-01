@@ -12,6 +12,8 @@ function MyApp({ Component, pageProps }: AppProps) {
                     name="viewport"
                     content="width=device-width, initial-scale=1.0"
                 />
+                <meta property="og:type" content="website" />
+                <meta property="og:locale" content="fr_FR" />
                 <link
                     rel="shortcut icon"
                     href="/favicon.jpg"

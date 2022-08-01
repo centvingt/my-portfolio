@@ -56,6 +56,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                             )}).`}
                             layout="fill"
                             objectFit={'contain'}
+                            placeholder="blur"
                         />
                     </div>
                     {work.gitHubURL && (

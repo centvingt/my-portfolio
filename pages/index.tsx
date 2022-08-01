@@ -2,6 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 
+import { useRouter } from 'next/router'
+
 import HomeSentencesComponent from '@/components/home-component/home-sentences-component'
 import {
     ButtonContactComponent,
@@ -36,16 +38,24 @@ const sentences = [
 ]
 
 const HomePage: NextPage = () => {
+    const { pathname } = useRouter()
+
+    const documentDescription =
+        'Vincent Caronnet développe à Paris vos applications mobiles et vos sites web avec les langages Swift, React et Node.js.'
+    const documentTitle = 'Vincent Caronnet, développeur web et mobile à Paris'
+
     return (
         <>
             <Head>
-                <title>
-                    Vincent Caronnet, développeur web et mobile à Paris
-                </title>
+                <title>{documentTitle}</title>
+                <meta name="description" content={documentDescription} />
                 <meta
-                    name="description"
-                    content="Vincent Caronnet développe à Paris vos applications mobiles et vos sites web avec les langages Swift, React et Node.js."
+                    property="og:url"
+                    content={`${process.env.URL}${pathname}`}
                 />
+                <meta property="og:title" content={documentTitle} />
+                <meta property="og:description" content={documentDescription} />
+                <meta property="og:image" content="img/logo-neon.jpg" />
             </Head>
             <div className="pr-layout sm:container sm:mx-auto xl:grid xl:grid-cols-12">
                 <header className="mb-6 grid-cols-12 text-lg sm:grid xl:col-span-full xl:col-start-2">
@@ -54,6 +64,7 @@ const HomePage: NextPage = () => {
                             src={photo120}
                             alt="Vincent Caronnet, développeur mobile et web"
                             layout="responsive"
+                            placeholder="blur"
                         />
                     </div>
                     <div className="col-span-full col-start-8 row-start-1 flex h-full max-h-screen flex-col justify-end sm:col-start-7 lg:col-start-8 2xl:col-start-8">

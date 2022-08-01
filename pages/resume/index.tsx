@@ -60,6 +60,7 @@ const ResumePage: FC = () => {
                             src={vincent2019}
                             alt="Vincent Caronnet en 2019"
                             layout="responsive"
+                            placeholder="blur"
                         />
                     </div>
                     <section className="-mt-2">

@@ -57,6 +57,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                             layout="fill"
                             objectFit={'contain'}
                             placeholder="blur"
+                            blurDataURL="/img/works/work-placeholder.jpg"
                         />
                     </div>
                     {work.gitHubURL && (
@@ -75,7 +76,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                     )}
                 </div>
                 <main
-                    className="col-span-7 text-slate-300 sm:-mt-6 lg:col-start-7 xl:col-span-5 xl:col-start-7"
+                    className="work col-span-7 text-slate-300 sm:-mt-6 lg:col-start-7 xl:col-span-5 xl:col-start-7"
                     dangerouslySetInnerHTML={{
                         __html:
                             work.content ?? '<p>Il n’y a pas de contenu !</p>',
@@ -108,6 +109,10 @@ export const getStaticProps: GetStaticProps = async context => {
         'websiteURL',
         'categories',
     ])
+
+    // import image from '@/public/img/photo-120-1500w.jpg'
+    // const image = `/img/works/${slug}-cover.jpg`
+    // const image = require(`/img/works/${slug}-cover.jpg`)
 
     const content = await markdownToHtml(work.content || '')
 

@@ -21,6 +21,8 @@ const SnippetWorkComponent: FC<Props> = ({ work }) => {
                         alt={`${work.title} (${work.categories.join(', ')}).`}
                         layout="fill"
                         objectFit={'contain'}
+                        placeholder="blur"
+                        blurDataURL="/img/works/work-placeholder.jpg"
                     />
                 </div>
             </a>

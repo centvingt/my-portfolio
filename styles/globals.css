@@ -41,6 +41,9 @@
     ul {
         @apply ml-4 list-disc;
     }
+    ol {
+        @apply ml-4 list-decimal;
+    }
     p {
         @apply mt-2;
     }

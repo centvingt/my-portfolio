@@ -5,6 +5,8 @@ import { FC } from 'react'
 
 import { Work } from '../../utils/worksAPI'
 
+import { defaultRgbDataURL } from '@/utils/getRgbDataUrl'
+
 interface Props {
     work: Work
 }
@@ -24,7 +26,7 @@ const SnippetWorkComponent: FC<Props> = ({ work }) => {
                 height={1080}
                 sizes="(min-width: 568px) 50vw, (min-width: 808px) 220px, (min-width: 1048px) 25vw, (min-width: 1072px) 230px, 100vw"
                 placeholder="blur"
-                blurDataURL="/img/work-placeholder.jpg"
+                blurDataURL={defaultRgbDataURL}
             />
         </Link>
     )

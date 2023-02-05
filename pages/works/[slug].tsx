@@ -8,6 +8,8 @@ import { Work, getAllWorks, getWorkItemsBySlug } from '@/utils/worksAPI'
 import markdownToHtml from '@/utils/markdownToHtml'
 import { BsChevronLeft } from 'react-icons/bs'
 
+import { defaultRgbDataURL } from '@/utils/getRgbDataUrl'
+
 import {
     ButtonAppStoreComponent,
     ButtonGithubComponent,
@@ -54,7 +56,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                         width={1080}
                         height={1080}
                         placeholder="blur"
-                        blurDataURL="/img/work-placeholder.jpg"
+                        blurDataURL={defaultRgbDataURL}
                         sizes="100vw, (min-width: 768px) 285px, (min-width: 1024px) 382px, (min-width: 1280px) 480px"
                     />
                     {work.gitHubURL && (

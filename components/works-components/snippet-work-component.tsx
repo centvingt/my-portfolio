@@ -24,7 +24,7 @@ const SnippetWorkComponent: FC<Props> = ({ work }) => {
                 alt={`${work.title} (${work.categories.join(', ')}).`}
                 width={1080}
                 height={1080}
-                sizes="(min-width: 1072px) 230px, (min-width: 1048px) 25vw, (min-width: 808px) 220px, (min-width: 568px) 50vw, 100vw"
+                sizes="(min-width: 1072px) 230px, (min-width: 1048px) 25vw, (min-width: 808px) 220px, (min-width: 568px) 50vw, calc(100vw - 48px - 60px)"
                 placeholder="blur"
                 blurDataURL={defaultRgbDataURL}
             />

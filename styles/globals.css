@@ -32,7 +32,7 @@
         @apply mt-3 text-accent;
     }
     h3 {
-        @apply mb-3 text-sm font-normal text-slate-500;
+        @apply mb-3 text-sm font-normal text-slate-400;
     }
     strong {
         @apply font-bold text-accent;

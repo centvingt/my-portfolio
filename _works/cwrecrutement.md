@@ -2,7 +2,7 @@
 title: 'CW Recrutement'
 date: '2022-09-15'
 websiteURL: 'https://cwrecrutement.fr/'
-categories: ['Développement web', 'Next.js', 'react']
+categories: ['Développement web', 'Next.js', 'React']
 description: 'Développement web fullstack du site vitrine et du blog de CW Recrutement, jeune centre de formation situé à Paris.'
 ---
 

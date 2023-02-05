@@ -26,7 +26,7 @@ const PortfolioPage: NextPage<Props> = ({ allWorks }) => {
                     <header>
                         <h1 className="mt-10">Mes travaux</h1>
                     </header>
-                    <main className="mt-4 grid grid-cols-[repeat(auto-fit,_minmax(220px,_max-content))] items-end gap-5">
+                    <main className="mt-4 grid grid-cols-[repeat(auto-fit,_minmax(220px,_max-content))] gap-5">
                         {allWorks.map(work => (
                             <SnippetWorkComponent work={work} key={work.slug} />
                         ))}

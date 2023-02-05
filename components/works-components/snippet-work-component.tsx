@@ -12,7 +12,7 @@ interface Props {
 const SnippetWorkComponent: FC<Props> = ({ work }) => {
     return (
         <Link href={`/works/${work.slug}`}>
-            <a className="-mt-6 block w-[450px] max-w-full">
+            <a className="-mt-6 grid w-[450px] max-w-full grid-rows-[auto_1fr_auto]">
                 <h2>{work.title}</h2>
                 <h3>{`${work.categories.join(' – ')}`}</h3>
                 <div className="relative aspect-square w-full">

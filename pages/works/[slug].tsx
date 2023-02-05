@@ -57,7 +57,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                         height={1080}
                         placeholder="blur"
                         blurDataURL={defaultRgbDataURL}
-                        sizes="100vw, (min-width: 768px) 285px, (min-width: 1024px) 382px, (min-width: 1280px) 480px"
+                        sizes="(min-width: 1280px) 480px, (min-width: 1024px) 382px, (min-width: 768px) 285px, calc(100vw - 48px - 60px)"
                     />
                     {work.gitHubURL && (
                         <ButtonGithubComponent destination={work.gitHubURL} />

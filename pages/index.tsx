@@ -11,7 +11,7 @@ import {
     ButtonWorksComponent,
 } from '@/components/shared'
 
-import photo120 from '@/public/img/photo-120-1500w.jpg'
+import photo120 from '@/assets/img/photo-120-1500w.jpg'
 
 const sentences = [
     <>
@@ -63,7 +63,6 @@ const HomePage: NextPage = () => {
                         <Image
                             src={photo120}
                             alt="Vincent Caronnet, développeur mobile et web"
-                            layout="responsive"
                             placeholder="blur"
                         />
                     </div>
@@ -73,7 +72,7 @@ const HomePage: NextPage = () => {
                         </h1>
                         <HomeSentencesComponent
                             sentences={sentences}
-                            className="mt-0 text-left text-lg font-thin not-italic text-slate-100 sm:mb-4 sm:mt-1 sm:text-xl md:mb-6 md:text-2xl lg:mb-20 lg:mt-3 lg:text-3xl xl:text-4xl 2xl:text-5xl"
+                            className="mt-0 text-left text-lg font-thin not-italic text-slate-100 sm:mb-4 sm:text-xl md:mb-6 md:text-2xl lg:mb-20 lg:mt-1 lg:text-3xl xl:text-4xl 2xl:text-5xl"
                         />
                     </div>
                 </header>
@@ -92,7 +91,6 @@ const HomePage: NextPage = () => {
                     </p>
                 </header>
                 <div className="col-span-9 grid text-slate-300 sm:-mt-6 lg:col-start-5 xl:col-span-6 xl:col-start-6">
-                    {/* <section className="mt-6 grid gap-x-5 md:grid-cols-2"> */}
                     <div>
                         <h2>Ce que je vais pouvoir faire pour&nbsp;vous</h2>
                         <ul className="mt-2">
@@ -133,7 +131,6 @@ const HomePage: NextPage = () => {
                             <ButtonContactComponent />
                         </div>
                     </div>
-                    {/* </section> */}
                 </div>
             </main>
         </>

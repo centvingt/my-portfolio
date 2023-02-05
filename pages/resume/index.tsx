@@ -7,7 +7,7 @@ import {
     ButtonServicesComponent,
 } from '@/components/shared'
 
-import vincent2019 from '@/public/img/vincent-2019.jpg'
+import vincent2019 from '@/assets/img/vincent-2019.jpg'
 
 const ResumePage: FC = () => {
     return (
@@ -55,14 +55,12 @@ const ResumePage: FC = () => {
                             </li>
                         </ul>
                     </section>
-                    <div className="mt-5 md:-order-1 md:my-5 md:mt-8">
-                        <Image
-                            src={vincent2019}
-                            alt="Vincent Caronnet en 2019"
-                            layout="responsive"
-                            placeholder="blur"
-                        />
-                    </div>
+                    <Image
+                        src={vincent2019}
+                        alt="Vincent Caronnet en 2019"
+                        placeholder="blur"
+                        className="mt-5 md:-order-1 md:my-5 md:mt-8"
+                    />
                     <section className="-mt-2">
                         <h2>Vous accompagner dans votre projet</h2>
                         <p>

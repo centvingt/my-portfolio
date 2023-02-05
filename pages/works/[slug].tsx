@@ -17,7 +17,6 @@ import {
 
 interface Props {
     work: Work
-    content: string
 }
 
 const WorkPage: NextPage<Props> = ({ work }) => {
@@ -38,28 +37,26 @@ const WorkPage: NextPage<Props> = ({ work }) => {
             </Head>
             <div className="pr-layout mt-10 grid-cols-12 gap-x-5 gap-y-1 sm:container sm:mx-auto md:grid">
                 <header className="col-span-5 xl:col-span-4 xl:col-start-2">
-                    <Link href="/works/">
-                        <a className="mb-5 grid grid-cols-[12px_1fr] items-center text-xs font-light text-slate-300 underline">
-                            <BsChevronLeft /> Retour aux travaux
-                        </a>
+                    <Link
+                        href="/works/"
+                        className="mb-5 grid grid-cols-[12px_1fr] items-center text-xs font-light text-slate-300 underline"
+                    >
+                        <BsChevronLeft /> Retour aux travaux
                     </Link>
                     <h1>{work.title}</h1>
                     <h2 className="mt-2">{getDate()}</h2>
                     <h3>{`${work.categories.join(' – ')}`}</h3>
                 </header>
                 <div className="col-span-5 col-start-1 xl:col-span-4 xl:col-start-2">
-                    <div className="relative aspect-square w-full">
-                        <Image
-                            src={`/img/works/${work.slug}-cover.jpg`}
-                            alt={`${work.title} (${work.categories.join(
-                                ', '
-                            )}).`}
-                            layout="fill"
-                            objectFit={'contain'}
-                            placeholder="blur"
-                            blurDataURL="/img/works/work-placeholder.jpg"
-                        />
-                    </div>
+                    <Image
+                        src={require(`@/assets/img/works/${work.slug}-cover.jpg`)}
+                        alt={`${work.title} (${work.categories.join(', ')}).`}
+                        width={1080}
+                        height={1080}
+                        placeholder="blur"
+                        blurDataURL="/img/work-placeholder.jpg"
+                        sizes="100vw, (min-width: 768px) 285px, (min-width: 1024px) 382px, (min-width: 1280px) 480px"
+                    />
                     {work.gitHubURL && (
                         <ButtonGithubComponent destination={work.gitHubURL} />
                     )}

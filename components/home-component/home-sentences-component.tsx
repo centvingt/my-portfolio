@@ -7,7 +7,7 @@ interface Props {
 }
 
 const HomeSentencesComponent: FC<Props> = ({ sentences, className }) => {
-    const [randomSentence, setRandomSentence] = useState(<></>)
+    const [randomSentence, setRandomSentence] = useState(<>{sentences[0]}</>)
 
     const lastRandomSentence = useRef<JSX.Element>(sentences[0])
 

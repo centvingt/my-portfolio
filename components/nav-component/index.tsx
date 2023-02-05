@@ -16,29 +16,30 @@ const NavComponent: FC<Props> = ({ navIsClosed, setNavIsClosed }) => {
         >
             <div className="grid sm:container sm:mx-auto xl:grid-cols-12">
                 <nav className="col-span-full grid justify-items-center gap-3 sm:container sm:mx-auto sm:flex sm:gap-4 xl:col-span-10 xl:col-start-2">
-                    <Link href={'/'}>
-                        <a className="col-[1_/_2] row-[1_/_2] justify-self-start">
-                            <span className="font-extrabold">APPS.120</span>
-                            <span className="font-extralight text-accent">
-                                .design
-                            </span>
-                        </a>
+                    <Link
+                        href={'/'}
+                        className="col-[1_/_2] row-[1_/_2] justify-self-start"
+                    >
+                        <span className="font-extrabold">APPS.120</span>
+                        <span className="font-extralight text-accent">
+                            .design
+                        </span>
                     </Link>
                     <BurgerComponent
                         navIsClosed={navIsClosed}
                         setNavIsClosed={setNavIsClosed}
                     />
-                    <Link href={'/'}>
-                        <a className="text-accent sm:ml-auto">Accueil</a>
+                    <Link href={'/'} className="text-accent sm:ml-auto">
+                        Accueil
                     </Link>
-                    <Link href={'/works/'}>
-                        <a className="text-accent">Mes travaux</a>
+                    <Link href={'/works/'} className="text-accent">
+                        Mes travaux
                     </Link>
-                    <Link href={'/resume/'}>
-                        <a className="text-accent">Mon parcours</a>
+                    <Link href={'/resume/'} className="text-accent">
+                        Mon parcours
                     </Link>
-                    <Link href={'/contact/'}>
-                        <a className="text-accent">Me contacter</a>
+                    <Link href={'/contact/'} className="text-accent">
+                        Me contacter
                     </Link>
                 </nav>
             </div>

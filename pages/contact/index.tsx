@@ -5,7 +5,7 @@ import Head from 'next/head'
 import { IconContext } from 'react-icons'
 import { FiSend } from 'react-icons/fi'
 
-import logoNeon from '@/public/img/logo-neon.jpg'
+import logoNeon from '@/assets/img/logo-neon.jpg'
 
 const ContactPage: FC = () => {
     const [name, setName] = useState('')
@@ -67,14 +67,12 @@ const ContactPage: FC = () => {
                         au mieux pour le développer.
                     </p>
                     <p>À très bientôt&thinsp;!</p>
-                    <div className="mt-3 hidden md:block">
-                        <Image
-                            src={logoNeon}
-                            alt="Confiez le développement de vos applications et de vos site internet à 120.design."
-                            layout="responsive"
-                            placeholder="blur"
-                        />
-                    </div>
+                    <Image
+                        src={logoNeon}
+                        alt="Confiez le développement de vos applications et de vos site internet à 120.design."
+                        className="mt-3 hidden md:block"
+                        placeholder="blur"
+                    />
                 </header>
                 <main className="col-span-7 grid text-slate-300 lg:col-start-7 xl:col-span-5 xl:col-start-7">
                     <form

@@ -72,6 +72,7 @@ const ContactPage: FC = () => {
                         alt="Confiez le développement de vos applications et de vos site internet à 120.design."
                         className="mt-3 hidden md:block"
                         placeholder="blur"
+                        sizes="(min-width: 768px) 284px, (min-width: 1024px) 382px, (min-width: 1312px) 394px, (min-width: 1536px) 480px, 100vw"
                     />
                 </header>
                 <main className="col-span-7 grid text-slate-300 lg:col-start-7 xl:col-span-5 xl:col-start-7">

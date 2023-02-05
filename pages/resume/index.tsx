@@ -60,6 +60,7 @@ const ResumePage: FC = () => {
                         alt="Vincent Caronnet en 2019"
                         placeholder="blur"
                         className="mt-5 md:-order-1 md:my-5 md:mt-8"
+                        sizes="(min-width: 768px) 404px, (min-width: 1024px) 482px, (min-width: 1312px) 496px, (min-width: 1536px) 604px, 100vw"
                     />
                     <section className="-mt-2">
                         <h2>Vous accompagner dans votre projet</h2>

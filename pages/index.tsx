@@ -96,7 +96,7 @@ const HomePage: NextPage = () => {
                         <h2>Ce que je vais pouvoir faire pour&nbsp;vous</h2>
                         <ul className="mt-2">
                             <li>
-                                Développer <strong>une applications iOS</strong>{' '}
+                                Développer <strong>une application iOS</strong>{' '}
                                 pour iPhone disponible sur l’App Store,
                             </li>
                             <li>

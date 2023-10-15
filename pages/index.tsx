@@ -87,7 +87,7 @@ const HomePage: NextPage = () => {
                 <header className="col-span-3 grid content-start sm:mb-5 xl:col-span-3 xl:col-start-2">
                     <h1 id="services">Mes services</h1>
                     <p>
-                        Je peux réaliser pour vous votre site internet ou votre
+                        Je peux réaliser pour vous votre site internet et votre
                         application mobile.
                     </p>
                 </header>

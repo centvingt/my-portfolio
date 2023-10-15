@@ -1,6 +1,7 @@
 ---
 title: 'SFMemo'
 date: '2020-10-12'
+isInProgress: false
 appStoreURL: 'https://apps.apple.com/fr/app/sf-memo/id1535313659'
 gitHubURL: 'https://github.com/centvingt/SFMemory'
 categories: ['Développement iOS', 'Conception UI']

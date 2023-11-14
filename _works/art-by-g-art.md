@@ -1,10 +1,11 @@
 ---
 title: 'art-by-g.art'
-date: '2022-04-01'
-isInProgress: false
+startDate: '2022-04-01'
+endDate: '2022-04-01'
 websiteURL: 'https://art-by-g.art/'
 categories: ['Développement web', 'WordPress']
 description: 'Portfolio de Guillaume Baily-Michels, artiste et directeur artistique parisien sorti des écoles Duperré, Olivier de Serres et Penninghen.'
+isCCCollab: true
 ---
 
 ## Description

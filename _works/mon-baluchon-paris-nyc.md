@@ -1,7 +1,7 @@
 ---
 title: 'MonBaluchonParisNYC'
-date: '2021-07-10'
-isInProgress: false
+startDate: '2021-07-10'
+endDate: '2021-07-10'
 appStoreURL: 'https://apps.apple.com/fr/app/monbaluchonparisnyc/id1576078398'
 gitHubURL: 'https://github.com/centvingt/MonBaluchonParisNYC'
 categories: ['Développement iOS', 'Conception UI']

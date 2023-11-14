@@ -13,7 +13,8 @@ type WorkItems = {
 export interface Work {
     title: string
     slug: string
-    date: string
+    startDate: string
+    endDate: string | null
     description: string
     categories: string[]
     content?: string
@@ -21,6 +22,7 @@ export interface Work {
     figmaURL?: string
     gitHubURL?: string
     websiteURL?: string
+    isCCCollab?: boolean
 }
 
 // path to our list of available works
@@ -85,8 +87,51 @@ export const getAllWorks: (fields: string[]) => WorkItems[] = (fields = []) => {
     // get the works from the filepaths with the needed fields sorted by date in descending order
     const works = slugs
         .map(slug => getWorkItemsBySlug(slug, fields))
-        .sort((work1, work2) => (work1.date > work2.date ? -1 : 1))
+        // .sort((work1, work2) => (work1.date > work2.date ? -1 : 1))
+        .sort((work1, work2) => {
+            if (work1.endDate && work2.endDate)
+                return work1.endDate > work2.endDate ? -1 : 1
+            if (work1.endDate && !work2.endDate) return 1
+            if (!work1.endDate && work2.endDate) return -1
+            if (!work1.endDate && !work2.endDate)
+                return work1.startDate > work2.startDate ? -1 : 1
+            return 0
+        })
 
     // return the available work
     return works
 }
+
+const getYearFromDate = (date: Date) =>
+    date.toLocaleString('fr-FR', { year: 'numeric' })
+const getMonthAndYearFromStringDate = (stringDate: string) => {
+    const date = new Date(stringDate)
+    const month = date.toLocaleString('fr-FR', { month: 'long' })
+    const year = getYearFromDate(date)
+    return `${month.charAt(0).toUpperCase() + month.slice(1)} ${year}`
+}
+export const getFormatedDateFromWork = (work: Work) => {
+    const { startDate, endDate } = work
+    if (startDate === endDate) {
+        return getMonthAndYearFromStringDate(startDate)
+    }
+
+    if (!endDate) {
+        const date = new Date(startDate)
+        const year = getYearFromDate(date)
+        return `Depuis  ${year}`
+    }
+    const date1 = new Date(startDate)
+    const date2 = new Date(endDate)
+
+    if (date1.getFullYear() === date2.getFullYear())
+        return getMonthAndYearFromStringDate(endDate)
+
+    const year1 = getYearFromDate(date1)
+    const year2 = getYearFromDate(date2)
+
+    return `${year1}–${year2}`
+}
+
+export const casianCollaborationElement =
+    '<p class="mt-6 italic text-sm pt-2 border-t border-accent">Travail réalisé en collaboration avec <a href="https://casian.fr/" target="_blank" rel="noopener" class="text-accent underline">Casian Ciorba</a>.</p>'

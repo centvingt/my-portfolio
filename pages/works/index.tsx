@@ -41,7 +41,14 @@ export default PortfolioPage
 
 // get works from serverside at build time
 export const getStaticProps: GetStaticProps = async () => {
-    const allWorks = getAllWorks(['slug', 'title', 'date', 'categories'])
+    const allWorks = getAllWorks([
+        'slug',
+        'title',
+        'date',
+        'categories',
+        'startDate',
+        'endDate',
+    ])
 
     // return the allWorks props
     return {

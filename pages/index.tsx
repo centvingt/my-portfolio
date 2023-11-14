@@ -127,10 +127,10 @@ const HomePage: NextPage = () => {
                             en français), une interface qui vous permettra
                             d’administrer votre site sans l’aide de personne.
                         </p>
-                        <div className="buttons-container mt-2">
+                        {/* <div className="buttons-container mt-2">
                             <ButtonResumeComponent />
                             <ButtonContactComponent />
-                        </div>
+                        </div> */}
                     </div>
                 </div>
             </main>

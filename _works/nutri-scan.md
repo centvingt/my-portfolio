@@ -1,7 +1,7 @@
 ---
 title: 'NutriScan'
-date: '2021-11-20'
-isInProgress: false
+startDate: '2021-11-20'
+endDate: '2021-11-20'
 figmaURL: 'https://www.figma.com/file/VZffastNGXQ8Z9WpPgIzNV/NutriScan?node-id=1607%3A1700'
 appStoreURL: 'https://apple.co/3ci31r5'
 gitHubURL: 'https://github.com/centvingt/nutriscan'

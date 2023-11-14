@@ -4,7 +4,13 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-import { Work, getAllWorks, getWorkItemsBySlug } from '@/utils/worksAPI'
+import {
+    Work,
+    casianCollaborationElement,
+    getAllWorks,
+    getFormatedDateFromWork,
+    getWorkItemsBySlug,
+} from '@/utils/worksAPI'
 import markdownToHtml from '@/utils/markdownToHtml'
 import { BsChevronLeft } from 'react-icons/bs'
 
@@ -22,13 +28,6 @@ interface Props {
 }
 
 const WorkPage: NextPage<Props> = ({ work }) => {
-    const getDate = () => {
-        const date = new Date(work.date)
-        const month = date.toLocaleString('fr-FR', { month: 'long' })
-        const year = date.toLocaleString('fr-FR', { year: 'numeric' })
-        return `${month.charAt(0).toUpperCase() + month.slice(1)} ${year}`
-    }
-
     return (
         <>
             <Head>
@@ -46,7 +45,7 @@ const WorkPage: NextPage<Props> = ({ work }) => {
                         <BsChevronLeft /> Retour aux travaux
                     </Link>
                     <h1>{work.title}</h1>
-                    <h2 className="mt-2">{getDate()}</h2>
+                    <h2 className="mt-2">{getFormatedDateFromWork(work)}</h2>
                     <h3>{`${work.categories.join(' – ')}`}</h3>
                 </header>
                 <div className="col-span-5 col-start-1 xl:col-span-4 xl:col-start-2">
@@ -98,7 +97,8 @@ export const getStaticProps: GetStaticProps = async context => {
     const work = getWorkItemsBySlug(slug, [
         'slug',
         'title',
-        'date',
+        'startDate',
+        'endDate',
         'categories',
         'description',
         'content',
@@ -107,13 +107,16 @@ export const getStaticProps: GetStaticProps = async context => {
         'gitHubURL',
         'websiteURL',
         'categories',
+        'isCCCollab',
     ])
 
     // import image from '@/public/img/photo-120-1500w.jpg'
     // const image = `/img/works/${slug}-cover.jpg`
     // const image = require(`/img/works/${slug}-cover.jpg`)
 
-    const content = await markdownToHtml(work.content || '')
+    let content = await markdownToHtml(work.content || '')
+
+    if (work.isCCCollab) content += casianCollaborationElement
 
     return {
         props: {

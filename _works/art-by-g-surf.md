@@ -1,10 +1,11 @@
 ---
 title: 'art-by-g.surf'
-date: '2023-08-01'
-isInProgress: false
+startDate: '2023-08-01'
+endDate: '2023-08-01'
 websiteURL: 'https://art-by-g.surf/'
-categories: ['Développement web', 'WordPress']
+categories: ['Développement web', 'WordPress', 'E-commerce']
 description: 'Boutique en ligne de t-shirts et de créations originales.'
+isCCCollab: true
 ---
 
 ## Description

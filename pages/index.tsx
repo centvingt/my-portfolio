@@ -65,6 +65,7 @@ const HomePage: NextPage = () => {
                             alt="Vincent Caronnet, développeur mobile et web"
                             placeholder="blur"
                             sizes="(min-width: 640px) 340px, (min-width: 1024px) 640px, (min-width: 1280px) 746px, (min-width: 1744px) 896px, 100vw"
+                            priority={true}
                         />
                     </div>
                     <div className="col-span-full col-start-8 row-start-1 flex h-full max-h-screen flex-col justify-end sm:col-start-7 lg:col-start-8 2xl:col-start-8">

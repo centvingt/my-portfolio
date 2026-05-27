@@ -2,7 +2,7 @@
 title: 'SFMemo'
 startDate: '2020-10-12'
 endDate: '2020-10-12'
-appStoreURL: 'https://apps.apple.com/fr/app/sf-memo/id1535313659'
+# appStoreURL: 'https://apps.apple.com/fr/app/sf-memo/id1535313659'
 gitHubURL: 'https://github.com/centvingt/SFMemory'
 categories: ['Développement iOS', 'Conception UI']
 description: 'Application iOS pour savoir ce que contient produit alimentaire'
@@ -10,15 +10,15 @@ description: 'Application iOS pour savoir ce que contient produit alimentaire'
 
 ## Développement
 
--   **SwiftUI** pour la composition des pages et la navigation,
+- **SwiftUI** pour la composition des pages et la navigation,
 
--   **User Defaults** et **Combine** pour persister le score dans la mémoire du téléphone.
+- **User Defaults** et **Combine** pour persister le score dans la mémoire du téléphone.
 
 ## Conception UI
 
--   Maquette XD de l’application
+- Maquette XD de l’application
 
--   Logo et styles
+- Logo et styles
 
 ## Description
 

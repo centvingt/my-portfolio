@@ -3,7 +3,7 @@ title: 'NutriScan'
 startDate: '2021-11-20'
 endDate: '2021-11-20'
 figmaURL: 'https://www.figma.com/file/VZffastNGXQ8Z9WpPgIzNV/NutriScan?node-id=1607%3A1700'
-appStoreURL: 'https://apple.co/3ci31r5'
+# appStoreURL: 'https://apple.co/3ci31r5'
 gitHubURL: 'https://github.com/centvingt/nutriscan'
 categories: ['Développement iOS', 'Conception UI']
 description: 'Application iOS pour savoir ce que contient produit alimentaire'
@@ -11,23 +11,23 @@ description: 'Application iOS pour savoir ce que contient produit alimentaire'
 
 ## Développement
 
--   **SwiftUI 3** (compatible avec les iPhones à partir de l’iOS 15) et une architecture MVVM,
+- **SwiftUI 3** (compatible avec les iPhones à partir de l’iOS 15) et une architecture MVVM,
 
--   le SPM **CarBode** pour scanner le code à barres avec l’appareil photo de l’iPhone,
+- le SPM **CarBode** pour scanner le code à barres avec l’appareil photo de l’iPhone,
 
--   le SPM **Kingfisher** pour afficher les images de produits à partir de leur URL,
+- le SPM **Kingfisher** pour afficher les images de produits à partir de leur URL,
 
--   **CoreData** pour persister l’historique de recherche et les favoris,
+- **CoreData** pour persister l’historique de recherche et les favoris,
 
--   **StoreKit 2** (compatible avec les iPhones à partir de l’iOS 15) pour l’implémentation des achats In-App,
+- **StoreKit 2** (compatible avec les iPhones à partir de l’iOS 15) pour l’implémentation des achats In-App,
 
--   **XCTest** pour tester la majorité de la logique du ViewModèle et du Modèle.
+- **XCTest** pour tester la majorité de la logique du ViewModèle et du Modèle.
 
 ## Conception UI
 
--   Maquette Figma de l’application
+- Maquette Figma de l’application
 
--   Logo et design system
+- Logo et design system
 
 ## Description
 

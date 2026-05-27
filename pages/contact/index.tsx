@@ -12,6 +12,7 @@ const ContactPage: FC = () => {
     const [email, setEmail] = useState('')
     const [message, setMessage] = useState('')
     const [consent, setConsent] = useState(false)
+    const [submitted, setSubmitted] = useState(false)
 
     const formContactRef = useRef<HTMLFormElement>(null)
     const submitButtonRef = useRef<HTMLButtonElement>(null)
@@ -34,6 +35,23 @@ const ContactPage: FC = () => {
         })
     }, [])
 
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault()
+        const body = new URLSearchParams({
+            'form-name': 'contact',
+            name,
+            email,
+            message,
+            consent: consent ? 'on' : '',
+        }).toString()
+        await fetch('/__forms.html', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body,
+        })
+        setSubmitted(true)
+    }
+
     const handleNameInput = (e: ChangeEvent<HTMLInputElement>) => {
         setName(e.target.value)
     }
@@ -55,7 +73,7 @@ const ContactPage: FC = () => {
                 </title>
                 <meta
                     name="description"
-                    content="Vous avez un projet mobile et/ou web ? Parlez-en à Vincent Caronnet, développeur à Paris spécialisé dans la réalisation d’applications iOS et de site React."
+                    content="Vous avez un projet mobile et/ou web ? Parlez-en à Vincent Caronnet, développeur à Paris spécialisé dans la réalisation d'applications iOS et de site React."
                 />
             </Head>
             <div className="pr-layout mt-10 grid-cols-12 gap-5 sm:container sm:mx-auto md:grid">
@@ -76,102 +94,111 @@ const ContactPage: FC = () => {
                     />
                 </header>
                 <main className="col-span-7 grid text-slate-300 lg:col-start-7 xl:col-span-5 xl:col-start-7">
-                    <form
-                        className="0 mb-5 bg-accent/20 p-4 text-accent"
-                        ref={formContactRef}
-                        data-netlify="true"
-                        name="contact"
-                    >
-                        <input type="hidden" name="form-name" value="contact" />
-
-                        <fieldset className="invalid:text-tonic">
-                            <label
-                                className="block font-semibold italic"
-                                htmlFor="subject"
-                            >
-                                Mon nom*
-                            </label>
-                            <input
-                                className="input"
-                                type="text"
-                                name="name"
-                                id="name"
-                                value={name}
-                                onChange={handleNameInput}
-                                required
-                                placeholder="Ex. : Jean-Luc Martin"
-                            />
-                        </fieldset>
-
-                        <fieldset className="invalid:text-tonic">
-                            <label
-                                className="block font-semibold italic"
-                                htmlFor="email"
-                            >
-                                Mon e-mail*
-                            </label>
-                            <input
-                                className="input"
-                                type="email"
-                                name="email"
-                                id="email"
-                                value={email}
-                                onChange={handleEmailInput}
-                                required
-                                placeholder="Ex. : martin@gmail.com"
-                            />
-                        </fieldset>
-
-                        <fieldset className="invalid:text-tonic">
-                            <label
-                                className="block font-semibold italic"
-                                htmlFor="message"
-                            >
-                                Ma demande*
-                            </label>
-                            <textarea
-                                className="input min-h-[100px]"
-                                name="message"
-                                id="message"
-                                value={message}
-                                onChange={handleMessageTextarea}
-                                required
-                                placeholder="Ex. : Bonjour, j’aime bien ce que vous faites..."
-                            />
-                        </fieldset>
-
-                        <fieldset className="leading-3 invalid:text-tonic">
-                            <input
-                                type="checkbox"
-                                name="consent"
-                                id="consent"
-                                className="mr-2"
-                                checked={consent}
-                                onChange={handleConsentCheckbox}
-                            />
-                            <label htmlFor="consent" className="text-xs">
-                                En soumettant ce formulaire, j’accepte que mes
-                                informations soient utilisées uniquement dans le
-                                cadre de ma demande et de la relation
-                                commerciale qui peut en découler.*
-                            </label>
-                        </fieldset>
-
-                        <button
-                            disabled
-                            type="submit"
-                            className="mt-4 grid w-full grid-cols-[18px_max-content] items-center justify-center gap-2 bg-accent py-2 px-4 text-lg font-medium text-slate-900 disabled:bg-slate-400 disabled:text-slate-600"
-                            ref={submitButtonRef}
+                    {submitted ? (
+                        <p className="mb-5 bg-accent/20 p-4 text-accent">
+                            Merci pour votre message&thinsp;! Je vous répondrai
+                            dès que possible.
+                        </p>
+                    ) : (
+                        <form
+                            className="0 mb-5 bg-accent/20 p-4 text-accent"
+                            ref={formContactRef}
+                            data-netlify="true"
+                            name="contact"
+                            action="/__forms.html"
+                            onSubmit={handleSubmit}
                         >
-                            <IconContext.Provider value={{ size: '18px' }}>
-                                <FiSend />
-                            </IconContext.Provider>
-                            Envoyer
-                        </button>
-                        <p className="text-tonic">* Champ obligatoire.</p>
-                    </form>
+                            <input type="hidden" name="form-name" value="contact" />
+
+                            <fieldset className="invalid:text-tonic">
+                                <label
+                                    className="block font-semibold italic"
+                                    htmlFor="subject"
+                                >
+                                    Mon nom*
+                                </label>
+                                <input
+                                    className="input"
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    value={name}
+                                    onChange={handleNameInput}
+                                    required
+                                    placeholder="Ex. : Jean-Luc Martin"
+                                />
+                            </fieldset>
+
+                            <fieldset className="invalid:text-tonic">
+                                <label
+                                    className="block font-semibold italic"
+                                    htmlFor="email"
+                                >
+                                    Mon e-mail*
+                                </label>
+                                <input
+                                    className="input"
+                                    type="email"
+                                    name="email"
+                                    id="email"
+                                    value={email}
+                                    onChange={handleEmailInput}
+                                    required
+                                    placeholder="Ex. : martin@gmail.com"
+                                />
+                            </fieldset>
+
+                            <fieldset className="invalid:text-tonic">
+                                <label
+                                    className="block font-semibold italic"
+                                    htmlFor="message"
+                                >
+                                    Ma demande*
+                                </label>
+                                <textarea
+                                    className="input min-h-[100px]"
+                                    name="message"
+                                    id="message"
+                                    value={message}
+                                    onChange={handleMessageTextarea}
+                                    required
+                                    placeholder="Ex. : Bonjour, j'aime bien ce que vous faites..."
+                                />
+                            </fieldset>
+
+                            <fieldset className="leading-3 invalid:text-tonic">
+                                <input
+                                    type="checkbox"
+                                    name="consent"
+                                    id="consent"
+                                    className="mr-2"
+                                    checked={consent}
+                                    onChange={handleConsentCheckbox}
+                                />
+                                <label htmlFor="consent" className="text-xs">
+                                    En soumettant ce formulaire, j&apos;accepte que mes
+                                    informations soient utilisées uniquement dans le
+                                    cadre de ma demande et de la relation
+                                    commerciale qui peut en découler.*
+                                </label>
+                            </fieldset>
+
+                            <button
+                                disabled
+                                type="submit"
+                                className="mt-4 grid w-full grid-cols-[18px_max-content] items-center justify-center gap-2 bg-accent py-2 px-4 text-lg font-medium text-slate-900 disabled:bg-slate-400 disabled:text-slate-600"
+                                ref={submitButtonRef}
+                            >
+                                <IconContext.Provider value={{ size: '18px' }}>
+                                    <FiSend />
+                                </IconContext.Provider>
+                                Envoyer
+                            </button>
+                            <p className="text-tonic">* Champ obligatoire.</p>
+                        </form>
+                    )}
                     <p>
-                        Votre adresse e-mail ne me servira qu’à vous répondre,
+                        Votre adresse e-mail ne me servira qu&apos;à vous répondre,
                         je ne ferai aucun commerce des données que vous me
                         transmettrer par ce formulaire de contact.
                     </p>
